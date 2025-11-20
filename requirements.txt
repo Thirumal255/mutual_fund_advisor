@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+mftool
+pandas
+numpy
+cachetools
+python-multipart
+pdfplumber
+PyMuPDF
+deprecated
