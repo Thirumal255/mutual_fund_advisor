@@ -10,3 +10,5 @@ PyMuPDF
 deprecated
 rapidfuzz
 pytest
+pyarrow
+fastparquet

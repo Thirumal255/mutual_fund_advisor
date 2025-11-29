@@ -1,0 +1,298 @@
+{
+  "120437": {
+    "scheme_code": "120437",
+    "data_points": 3114,
+    "first_date": "2013-01-03",
+    "last_date": "2025-11-21",
+    "cagr": 0.0028933785254543487,
+    "annualized_return_from_mean": Infinity,
+    "rolling_1y": -8.680386810344665e-05,
+    "rolling_3y": -9.334722956011454e-05,
+    "rolling_5y": -9.334722956011454e-05,
+    "volatility_annual": NaN,
+    "sharpe": NaN,
+    "sortino": Infinity,
+    "max_drawdown": 1.0,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Axis Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 120437,
+      "scheme_name": "Axis Banking & PSU Debt Fund - Direct Plan - Daily IDCW",
+      "scheme_start_date": {
+        "date": "03-01-2013",
+        "nav": "1001.04900"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "120437",
+      "scheme_name": "Axis Banking & PSU Debt Fund - Direct Plan - Daily IDCW",
+      "last_updated": "21-Nov-2025",
+      "nav": "1039.0340"
+    }
+  },
+  "152162": {
+    "scheme_code": "152162",
+    "data_points": 488,
+    "first_date": "2023-11-15",
+    "last_date": "2025-11-21",
+    "cagr": 0.08529247577476129,
+    "annualized_return_from_mean": 0.08935136506785724,
+    "rolling_1y": 0.08437858420883604,
+    "rolling_3y": 0.17971011599353148,
+    "rolling_5y": 0.17971011599353148,
+    "volatility_annual": 0.011285488312165356,
+    "sharpe": 2.4541656657597843,
+    "sortino": 3.447160045892648,
+    "max_drawdown": 0.00760430107526882,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Bajaj Finserv Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 152162,
+      "scheme_name": "Bajaj Finserv Banking and PSU Fund-Direct Plan- Growth",
+      "scheme_start_date": {
+        "date": "15-11-2023",
+        "nav": "10.01780"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "152162",
+      "scheme_name": "Bajaj Finserv Banking and PSU Fund-Direct Plan- Growth",
+      "last_updated": "21-Nov-2025",
+      "nav": "11.8181"
+    }
+  },
+  "120438": {
+    "scheme_code": "120438",
+    "data_points": 3115,
+    "first_date": "2013-01-02",
+    "last_date": "2025-11-21",
+    "cagr": 0.07849685202993406,
+    "annualized_return_from_mean": Infinity,
+    "rolling_1y": 0.08328628704928831,
+    "rolling_3y": 0.24579913468873782,
+    "rolling_5y": 0.34152023566140244,
+    "volatility_annual": NaN,
+    "sharpe": NaN,
+    "sortino": Infinity,
+    "max_drawdown": 1.0,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Axis Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 120438,
+      "scheme_name": "Axis Banking & PSU Debt Fund - Direct Plan - Growth Option",
+      "scheme_start_date": {
+        "date": "02-01-2013",
+        "nav": "1053.22710"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "120438",
+      "scheme_name": "Axis Banking & PSU Debt Fund - Direct Plan - Growth Option",
+      "last_updated": "21-Nov-2025",
+      "nav": "2790.3637"
+    }
+  },
+  "119550": {
+    "scheme_code": "119550",
+    "data_points": 3112,
+    "first_date": "2013-01-02",
+    "last_date": "2025-11-21",
+    "cagr": 0.08436634668729948,
+    "annualized_return_from_mean": 0.08841758983887082,
+    "rolling_1y": 0.08264293107246634,
+    "rolling_3y": 0.25531735780429665,
+    "rolling_5y": 0.3558585946924424,
+    "volatility_annual": 0.016416413209367885,
+    "sharpe": 1.6334462587293495,
+    "sortino": 2.0011412569005174,
+    "max_drawdown": 0.030363931302855186,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Aditya Birla Sun Life Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 119550,
+      "scheme_name": "Aditya Birla Sun Life Banking & PSU Debt Fund- Direct Plan-Growth",
+      "scheme_start_date": {
+        "date": "02-01-2013",
+        "nav": "137.49900"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "119550",
+      "scheme_name": "Aditya Birla Sun Life Banking & PSU Debt Fund- Direct Plan-Growth",
+      "last_updated": "21-Nov-2025",
+      "nav": "390.6874"
+    }
+  },
+  "150505": {
+    "scheme_code": "150505",
+    "data_points": 786,
+    "first_date": "2022-08-24",
+    "last_date": "2025-11-21",
+    "cagr": 0.06990192715611654,
+    "annualized_return_from_mean": 0.07298876633825935,
+    "rolling_1y": 0.07503427108210414,
+    "rolling_3y": 0.23473783235133938,
+    "rolling_5y": 0.24528113452511735,
+    "volatility_annual": 0.00759887570932327,
+    "sharpe": 1.6129233467581867,
+    "sortino": 2.212419949360243,
+    "max_drawdown": 0.007353380166769496,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Canara Robeco Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 150505,
+      "scheme_name": "Canara Robeco Banking and PSU Debt Fund- Direct Plan- Growth Option",
+      "scheme_start_date": {
+        "date": "24-08-2022",
+        "nav": "10.01300"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "150505",
+      "scheme_name": "Canara Robeco Banking and PSU Debt Fund- Direct Plan- Growth Option",
+      "last_updated": "21-Nov-2025",
+      "nav": "12.4690"
+    }
+  },
+  "127471": {
+    "scheme_code": "127471",
+    "data_points": 2839,
+    "first_date": "2014-02-20",
+    "last_date": "2025-11-21",
+    "cagr": 0.0039024641448202058,
+    "annualized_return_from_mean": 0.004158603267486072,
+    "rolling_1y": -9.544990311805002e-06,
+    "rolling_3y": -1.90897984118088e-05,
+    "rolling_5y": -1.90897984118088e-05,
+    "volatility_annual": 0.012965633676868111,
+    "sharpe": -4.064006534791862,
+    "sortino": -7.027256633849227,
+    "max_drawdown": 0.03287564514558381,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Bandhan Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 127471,
+      "scheme_name": "Bandhan Banking and PSU Fund - Direct Daily IDCW",
+      "scheme_start_date": {
+        "date": "20-02-2014",
+        "nav": "10.00760"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "127471",
+      "scheme_name": "Bandhan Banking and PSU Fund - Direct Daily IDCW",
+      "last_updated": "21-Nov-2025",
+      "nav": "10.4766"
+    }
+  },
+  "124175": {
+    "scheme_code": "124175",
+    "data_points": 2949,
+    "first_date": "2013-09-16",
+    "last_date": "2025-11-21",
+    "cagr": 0.07973328187402484,
+    "annualized_return_from_mean": 0.08334612012856613,
+    "rolling_1y": 0.07638891820357707,
+    "rolling_3y": 0.2522787545427758,
+    "rolling_5y": 0.337149179846457,
+    "volatility_annual": 0.015725393865211136,
+    "sharpe": 1.4009054746680771,
+    "sortino": 1.8710528654568424,
+    "max_drawdown": 0.03050261928359048,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "DSP Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 124175,
+      "scheme_name": "DSP Banking & PSU Debt Fund - Direct Plan - Growth",
+      "scheme_start_date": {
+        "date": "16-09-2013",
+        "nav": "10.00980"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "124175",
+      "scheme_name": "DSP Banking & PSU Debt Fund - Direct Plan - Growth",
+      "last_updated": "21-Nov-2025",
+      "nav": "25.4989"
+    }
+  },
+  "121279": {
+    "scheme_code": "121279",
+    "data_points": 3070,
+    "first_date": "2013-03-08",
+    "last_date": "2025-11-21",
+    "cagr": 0.0778389563553552,
+    "annualized_return_from_mean": 0.08152469247808747,
+    "rolling_1y": 0.07907936217466172,
+    "rolling_3y": 0.24501429969865063,
+    "rolling_5y": 0.33847836404531484,
+    "volatility_annual": 0.014998603690819626,
+    "sharpe": 1.3541965068653343,
+    "sortino": 1.8532748537975827,
+    "max_drawdown": 0.03286644550927632,
+    "beta": null,
+    "tracking_error": null,
+    "expense_ratio_percent": null,
+    "exit_load_percent": null,
+    "aum": null,
+    "scheme_details_raw": {
+      "fund_house": "Bandhan Mutual Fund",
+      "scheme_type": "Open Ended Schemes",
+      "scheme_category": "Debt Scheme - Banking and PSU Fund",
+      "scheme_code": 121279,
+      "scheme_name": "Bandhan Banking and PSU Fund - Direct Growth",
+      "scheme_start_date": {
+        "date": "08-03-2013",
+        "nav": "10.00320"
+      }
+    },
+    "scheme_quote_raw": {
+      "scheme_code": "121279",
+      "scheme_name": "Bandhan Banking and PSU Fund - Direct Growth",
+      "last_updated": "21-Nov-2025",
+      "nav": "25.9456"
+    }
+  }
+}
