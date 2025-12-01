@@ -1,5 +1,28 @@
-venv/
+# Python bytecode
 __pycache__/
 *.pyc
-.env
-.DS_Store
+
+# Virtualenv
+mfa/
+
+# Local editor settings
+.vscode/
+.idea/
+
+# Secrets
+data/.openai_api_key
+
+# Regenerable caches / raw data
+data/details_cache.json
+data/masterlist.json
+data/quote_cache.json
+data/nav_cache/
+data/quote_cache.json
+data/metrics_result.json
+
+# SID outputs & docs that can be regenerated
+data/scheme_docs/
+data/sid_pdfs/
+
+# Logs
+*.log
