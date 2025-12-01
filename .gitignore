@@ -1,28 +1,17 @@
-# Python bytecode
+# Secrets
+OPENAI_API_KEY.txt
+data/.openai_api_key
+
+# Raw PDFs or dumps
+sid_all/
+data/sid_pdfs/
+data/scheme_docs/
+
+# Bytecode
 __pycache__/
 *.pyc
 
-# Virtualenv
-mfa/
-
-# Local editor settings
-.vscode/
-.idea/
-
-# Secrets
-data/.openai_api_key
-
-# Regenerable caches / raw data
-data/details_cache.json
-data/masterlist.json
-data/quote_cache.json
-data/nav_cache/
-data/quote_cache.json
-data/metrics_result.json
-
-# SID outputs & docs that can be regenerated
-data/scheme_docs/
-data/sid_pdfs/
-
-# Logs
-*.log
+# venvs
+env/
+venv/
+.mfa/
