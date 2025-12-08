@@ -13,6 +13,8 @@ Benchmark-based metrics (beta, tracking error) are LEFT as placeholders for now.
 """
 
 import os
+import logging
+import time
 from datetime import datetime
 from typing import Dict, Any, List, Optional
 
@@ -31,12 +33,24 @@ os.makedirs(NAV_CACHE_DIR, exist_ok=True)
 
 CACHE_MAX_AGE_DAYS = 7
 
+# ---------------------------
+# Logging setup for this module
+# ---------------------------
+logger = logging.getLogger("app.metrics")
+if not logger.handlers:
+    # configure default handler so importers see logs even if logging not configured
+    ch = logging.StreamHandler()
+    formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+    logger.setLevel(logging.INFO)
+
 
 # =====================================================
 # Helpers
 # =====================================================
 def _log(msg: str) -> None:
-    print(f"[metrics] {msg}")
+    logger.info(msg)
 
 
 def _nav_cache_path(code: str) -> str:
@@ -62,18 +76,6 @@ def _nav_from_dataframe(df: pd.DataFrame) -> pd.Series:
     """
     Normalize DataFrame returned by:
       mf.get_scheme_historical_nav(code, as_Dataframe=True)
-
-    Debug output showed shape like:
-
-                      nav  dayChange
-    date
-    27-11-2025  249.77410    -0.2231
-    26-11-2025  249.99720     2.3327
-    ...
-
-    So:
-    - index is 'date' strings in DD-MM-YYYY
-    - column 'nav' has NAV values.
     """
     if df is None or df.empty:
         return pd.Series(dtype=float)
@@ -97,15 +99,6 @@ def _nav_from_dataframe(df: pd.DataFrame) -> pd.Series:
 def _nav_from_dict(data: dict) -> pd.Series:
     """
     Normalize dict returned by mftool.get_scheme_historical_nav(code)
-    Debug output showed:
-
-      {
-        "fund_house": ...,
-        "data": [
-          {"date": "27-11-2025", "nav": "249.77410"},
-          ...
-        ]
-      }
     """
     if not isinstance(data, dict):
         return pd.Series(dtype=float)
@@ -161,6 +154,7 @@ def fetch_nav_series(code: str) -> pd.Series:
             s = s.dropna()
             s = s.sort_index()
             if len(s) > 1:
+                _log(f"Cache hit for NAV {code} ({len(s)} points)")
                 return s
         except Exception as e:
             _log(f"Cache read failed for {code}: {e}")
@@ -191,11 +185,13 @@ def fetch_nav_series(code: str) -> pd.Series:
             return pd.Series(dtype=float)
 
     if nav_series.empty:
+        _log(f"No NAV data returned for {code}")
         return nav_series
 
     # 3️⃣ Save to cache
     try:
         nav_series.to_frame(name="nav").to_parquet(cache_path)
+        _log(f"Wrote NAV cache for {code} ({len(nav_series)} points)")
     except Exception as e:
         _log(f"Failed to write NAV cache for {code}: {e}")
 
@@ -339,12 +335,12 @@ def fetch_scheme_fees_and_aum(code: str):
     try:
         details = mf.get_scheme_details(str(code)) or {}
     except Exception:
-        pass
+        logger.debug("get_scheme_details failed for %s", code)
 
     try:
         quote = mf.get_scheme_quote(str(code)) or {}
     except Exception:
-        pass
+        logger.debug("get_scheme_quote failed for %s", code)
 
     exp_ratio = None
     aum = None
@@ -433,6 +429,7 @@ def compute_metrics_for_code(
         "tracking_error": None,
     }
 
+    t_start = time.time()
     nav = fetch_nav_series(code)
     if nav is None or len(nav) < 2:
         _log(f"compute_metrics_for_code: insufficient NAV for {code}")
@@ -468,6 +465,8 @@ def compute_metrics_for_code(
 
     # Benchmark-based metrics (beta / tracking_error) intentionally left None for now.
 
+    t_done = time.time()
+    logger.info("Computed metrics for %s (%d points) in %.2fs", code, out["data_points"], t_done - t_start)
     return out
 
 
@@ -481,10 +480,19 @@ def compute_metrics_batch(
 ) -> Dict[str, Dict[str, Any]]:
     """
     Compute metrics for many scheme codes in parallel.
+    Only basic progress logging:
+        Progress: 10/50 (20.0%). Elapsed: 44.0s. Avg/task: 4.3s. ETA: 218.0s
     """
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
     results: Dict[str, Dict[str, Any]] = {}
+    total = len(codes)
+    if total == 0:
+        return results
+
+    start_time = time.time()
+    per_item_times: List[float] = []
+    processed = 0
 
     def worker(c: str) -> Dict[str, Any]:
         return compute_metrics_for_code(c, risk_free_rate=risk_free_rate)
@@ -492,11 +500,28 @@ def compute_metrics_batch(
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
         future_map = {ex.submit(worker, c): c for c in codes}
         for fut in as_completed(future_map):
+            t0 = time.time()
             c = future_map[fut]
+
             try:
                 results[str(c)] = fut.result()
             except Exception as e:
-                _log(f"Error in compute_metrics_batch for {c}: {e}")
+                # If one fails, set error but don't log anything else
                 results[str(c)] = {"scheme_code": str(c), "error": str(e)}
+
+            dur = time.time() - t0
+            per_item_times.append(dur)
+            processed += 1
+
+            # Log minimal progress every 10 items or at end
+            if processed % 10 == 0 or processed == total:
+                elapsed = time.time() - start_time
+                avg = sum(per_item_times) / len(per_item_times)
+                remaining = (total - processed) * avg
+                pct = (processed / total) * 100.0
+                logger.info(
+                    "Progress: %d/%d (%.1f%%). Elapsed: %.1fs. Avg/task: %.1fs. ETA: %.1fs",
+                    processed, total, pct, elapsed, avg, remaining
+                )
 
     return results

@@ -1,4 +1,4 @@
-# scripts/build_parent_metrics.py
+# app/build_parent_metrics.py
 """
 Build metrics for all parent schemes using their representative child code.
 

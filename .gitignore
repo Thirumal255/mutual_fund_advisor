@@ -15,3 +15,53 @@ __pycache__/
 env/
 venv/
 .mfa/
+data/.refresh_token
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+venv/
+env/
+.mfa_env/
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data folders (auto generated)
+data/metrics_by_code.json
+data/metrics_ui.json
+data/parent_masterlist.json
+data/metrics_parent_reps.json
+
+# SID extracted and PDF raw files (regenerate anytime)
+data/scheme_docs/
+data/sid_pdfs/
+data/nav_cache/
+
+# Cache folders
+.cache/
+.tmp/
+
+# FastAPI/UI build (later)
+frontend/node_modules/
+frontend/.next/
+frontend/build/

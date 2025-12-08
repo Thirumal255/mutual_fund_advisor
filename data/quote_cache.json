@@ -75305,5 +75305,257 @@
     "scheme_name": "UTI Quarterly Interval Fund - III -Regular Plan - Growth Option",
     "last_updated": "25-Mar-2025",
     "nav": "30.4741"
+  },
+  "154011": {
+    "scheme_code": "154011",
+    "scheme_name": "Capitalmind Liquid Fund - Direct-Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "1002.2611"
+  },
+  "154010": {
+    "scheme_code": "154010",
+    "scheme_name": "Capitalmind Liquid Fund - Regular-Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "1002.2281"
+  },
+  "153935": {
+    "scheme_code": "153935",
+    "scheme_name": "Bajaj Finserv Banking and Financial Services Fund - Regular - Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.976"
+  },
+  "153941": {
+    "scheme_code": "153941",
+    "scheme_name": "Franklin India Multi-Factor Fund- IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9224"
+  },
+  "153938": {
+    "scheme_code": "153938",
+    "scheme_name": "Bajaj Finserv Banking and Financial Services Fund - Direct - IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.978"
+  },
+  "153973": {
+    "scheme_code": "153973",
+    "scheme_name": "Bandhan Healthcare Fund - Regular Plan - IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.924"
+  },
+  "153944": {
+    "scheme_code": "153944",
+    "scheme_name": "Franklin India Multi-Factor Fund- Direct- IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9246"
+  },
+  "153943": {
+    "scheme_code": "153943",
+    "scheme_name": "Franklin India Multi-Factor Fund- Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9224"
+  },
+  "153936": {
+    "scheme_code": "153936",
+    "scheme_name": "Bajaj Finserv Banking and Financial Services Fund - Regular - IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.976"
+  },
+  "153974": {
+    "scheme_code": "153974",
+    "scheme_name": "Bandhan Healthcare Fund - Regular Plan - Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.924"
+  },
+  "153949": {
+    "scheme_code": "153949",
+    "scheme_name": "LIC MF Consumption Fund-Direct Plan-IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9811"
+  },
+  "153972": {
+    "scheme_code": "153972",
+    "scheme_name": "Bandhan Healthcare Fund - Direct Plan - Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.927"
+  },
+  "153950": {
+    "scheme_code": "153950",
+    "scheme_name": "LIC MF Consumption Fund-Regular Plan-Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9749"
+  },
+  "153937": {
+    "scheme_code": "153937",
+    "scheme_name": "Bajaj Finserv Banking and Financial Services Fund - Direct - Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.978"
+  },
+  "153948": {
+    "scheme_code": "153948",
+    "scheme_name": "LIC MF Consumption Fund-Direct Plan-Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9811"
+  },
+  "153942": {
+    "scheme_code": "153942",
+    "scheme_name": "Franklin India Multi-Factor Fund- Direct- Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9246"
+  },
+  "153951": {
+    "scheme_code": "153951",
+    "scheme_name": "LIC MF Consumption Fund-Regular Plan-IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.9749"
+  },
+  "153910": {
+    "scheme_code": "153910",
+    "scheme_name": "Helios Small Cap Fund - Direct Plan - IDCW Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.93"
+  },
+  "153912": {
+    "scheme_code": "153912",
+    "scheme_name": "Helios Small Cap Fund - Direct Plan - Growth Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.93"
+  },
+  "153911": {
+    "scheme_code": "153911",
+    "scheme_name": "Helios Small Cap Fund - Regular Plan - IDCW Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.93"
+  },
+  "153909": {
+    "scheme_code": "153909",
+    "scheme_name": "Helios Small Cap Fund - Regular Plan - Growth Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.93"
+  },
+  "153971": {
+    "scheme_code": "153971",
+    "scheme_name": "Bandhan Healthcare Fund - Direct Plan - IDCW",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.927"
+  },
+  "153990": {
+    "scheme_code": "153990",
+    "scheme_name": "PGIM India Multi Asset Allocation Fund - Direct Plan - IDCW Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.99"
+  },
+  "153988": {
+    "scheme_code": "153988",
+    "scheme_name": "PGIM India Multi Asset Allocation Fund - Regular Plan - Growth Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.99"
+  },
+  "153989": {
+    "scheme_code": "153989",
+    "scheme_name": "PGIM India Multi Asset Allocation Fund - Regular Plan - IDCW Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.99"
+  },
+  "153987": {
+    "scheme_code": "153987",
+    "scheme_name": "PGIM India Multi Asset Allocation Fund - Direct Plan - Growth Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.99"
+  },
+  "153955": {
+    "scheme_code": "153955",
+    "scheme_name": "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 INDEX FUND - REGULAR GROWTH",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.8632"
+  },
+  "153956": {
+    "scheme_code": "153956",
+    "scheme_name": "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 INDEX FUND - DIRECT GROWTH",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.8656"
+  },
+  "153959": {
+    "scheme_code": "153959",
+    "scheme_name": "HDFC BSE India Sector Leaders India Fund - Direct Plan - Growth Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.8863"
+  },
+  "153958": {
+    "scheme_code": "153958",
+    "scheme_name": "HDFC BSE India Sector Leaders Index Fund - Regular Plan - Growth Option",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.8851"
+  },
+  "153957": {
+    "scheme_code": "153957",
+    "scheme_name": "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 ETF",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.8663"
+  },
+  "153975": {
+    "scheme_code": "153975",
+    "scheme_name": "DSP MSCI INDIA ETF",
+    "last_updated": "03-Dec-2025",
+    "nav": "30.4824"
+  },
+  "153966": {
+    "scheme_code": "153966",
+    "scheme_name": "Edelweiss Nifty 50 ETF - Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "25.9657"
+  },
+  "153947": {
+    "scheme_code": "153947",
+    "scheme_name": "Edelweiss BSE Sensex ETF - Growth",
+    "last_updated": "03-Dec-2025",
+    "nav": "85.0468"
+  },
+  "153907": {
+    "scheme_code": "153907",
+    "scheme_name": "Groww Nifty Capital Markets ETF",
+    "last_updated": "03-Dec-2025",
+    "nav": "9.8162"
+  },
+  "154033": {
+    "scheme_code": "154033",
+    "scheme_name": "Motilal Oswal Nifty Services Sector ETF",
+    "last_updated": "03-Dec-2025",
+    "nav": "33.7723"
+  },
+  "154070": {
+    "scheme_code": "154070",
+    "scheme_name": "JioBlackRock Overnight Fund - Unclaimed Redemption - Upto 3 years - Growth Option",
+    "last_updated": "04-Dec-2025",
+    "nav": "1000.2866"
+  },
+  "153970": {
+    "scheme_code": "153970",
+    "scheme_name": "Kotak Rural Opportunities Fund - Direct Plan - Growth",
+    "last_updated": "04-Dec-2025",
+    "nav": "10.019"
+  },
+  "153968": {
+    "scheme_code": "153968",
+    "scheme_name": "Kotak Rural Opportunities Fund - Regular Plan - IDCW Dividend - Payout & Reinvestment",
+    "last_updated": "04-Dec-2025",
+    "nav": "10.016"
+  },
+  "153967": {
+    "scheme_code": "153967",
+    "scheme_name": "Kotak Rural Opportunities Fund - Direct Plan - IDCW Divdend - Payouout & Reinvestment",
+    "last_updated": "04-Dec-2025",
+    "nav": "10.019"
+  },
+  "153969": {
+    "scheme_code": "153969",
+    "scheme_name": "Kotak Rural Opportunities Fund - Regular Plan - Growth",
+    "last_updated": "04-Dec-2025",
+    "nav": "10.016"
+  },
+  "154062": {
+    "scheme_code": "154062",
+    "scheme_name": "Motilal Oswal Nifty MNC ETF",
+    "last_updated": "04-Dec-2025",
+    "nav": "30.0778"
   }
 }

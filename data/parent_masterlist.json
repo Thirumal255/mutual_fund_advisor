@@ -1,6 +1,6 @@
 {
   "meta": {
-    "ts": 1763738822.2558122
+    "ts": 1765027625.9877083
   },
   "parent_groups": {
     "aditya birla sun life banking & psu debt fund": [
@@ -3351,64 +3351,62 @@
         "Bajaj Finserv Gilt Fund - Regular - IDCW"
       ]
     ],
-    "bandhan government securities fund - ip - - b - half yearly": [
-      [
-        "108558",
-        "BANDHAN Government Securities Fund - IP - Regular - Plan B - Half Yearly IDCW"
-      ]
-    ],
-    "bandhan government securities fund - ip": [
-      [
-        "108559",
-        "BANDHAN Government Securities Fund - IP - Regular Plan - Annual IDCW"
-      ],
+    "bandhan gilt fund": [
       [
         "108557",
-        "BANDHAN Government Securities Fund - IP - Regular Plan - Quarterly IDCW"
+        "Bandhan Gilt Fund - Regular Plan - Quarterly IDCW"
       ],
-      [
-        "111525",
-        "BANDHAN Government Securities Fund - IP - Regular Plan - Growth"
-      ],
-      [
-        "111527",
-        "BANDHAN Government Securities Fund - IP - Regular Plan - IDCW"
-      ]
-    ],
-    "bandhan government securities fund - ip - - b - periodic": [
-      [
-        "131395",
-        "BANDHAN Government Securities Fund - IP - Regular -Plan B - Periodic IDCW"
-      ]
-    ],
-    "bandhan government securities fund - investment": [
       [
         "118467",
-        "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Annual IDCW"
+        "Bandhan Gilt Fund - Direct Plan - Annual IDCW"
       ],
       [
         "118464",
-        "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Growth"
+        "Bandhan Gilt Fund - Direct Plan - Growth"
       ],
       [
         "118463",
-        "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-IDCW"
+        "Bandhan Gilt Fund - Direct Plan - IDCW"
       ],
       [
         "118466",
-        "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Quarterly IDCW"
+        "Bandhan Gilt Fund - Direct Plan - Quarterly IDCW"
+      ],
+      [
+        "111525",
+        "Bandhan Gilt Fund - Regular Plan - Growth"
+      ],
+      [
+        "111527",
+        "Bandhan Gilt Fund - Regular Plan - IDCW"
+      ],
+      [
+        "108559",
+        "Bandhan Gilt Fund - Regular Plan - Annual IDCW"
       ]
     ],
-    "bandhan government securities fund - investment - - half yearly": [
+    "bandhan gilt fund - - half yearly": [
       [
         "118465",
-        "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Half Yearly IDCW"
+        "Bandhan Gilt Fund - Direct Plan - Half Yearly IDCW"
       ]
     ],
-    "bandhan government securities fund - investment - - periodic": [
+    "bandhan gilt fund - - periodic": [
       [
         "131394",
-        "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Periodic IDCW"
+        "Bandhan Gilt Fund - Direct Plan - Periodic IDCW"
+      ]
+    ],
+    "bandhan gilt fund - b - periodic": [
+      [
+        "131395",
+        "Bandhan Gilt Fund - Regular Plan B - Periodic IDCW"
+      ]
+    ],
+    "bandhan gilt fund - - b - half yearly": [
+      [
+        "108558",
+        "Bandhan Gilt Fund - Regular - Plan B - Half Yearly IDCW"
       ]
     ],
     "baroda bnp paribas gilt fund": [
@@ -3929,48 +3927,48 @@
         "UTI Gilt Fund - Regular Plan - IDCW"
       ]
     ],
-    "bandhan government securities fund - constant maturity": [
-      [
-        "108646",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan - Regular Plan - Quarterly IDCW"
-      ],
-      [
-        "108753",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan - Regular Plan - Growth"
-      ],
-      [
-        "111343",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan - Regular Plan - Weekly IDCW"
-      ],
-      [
-        "108644",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan - Regular Plan - Monthly IDCW"
-      ],
+    "bandhan gilt fund with 10 year constant duration fund": [
       [
         "118387",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Growth"
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Growth"
       ],
       [
         "118390",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Monthly IDCW"
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Monthly IDCW"
       ],
       [
         "118388",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Quarterly IDCW"
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Quarterly IDCW"
       ],
       [
         "118389",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Weekly IDCW"
-      ]
-    ],
-    "bandhan government securities fund - constant maturity - - periodic": [
-      [
-        "131391",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan - Regular Plan - Periodic IDCW"
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Weekly IDCW"
       ],
       [
+        "108644",
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Regular Plan - Monthly IDCW"
+      ],
+      [
+        "108753",
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Regular Plan - Growth"
+      ],
+      [
+        "111343",
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Regular Plan - Weekly IDCW"
+      ],
+      [
+        "108646",
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Regular Plan - Quarterly IDCW"
+      ]
+    ],
+    "bandhan gilt fund with 10 year constant duration fund - - periodic": [
+      [
         "131390",
-        "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Periodic IDCW"
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Periodic IDCW"
+      ],
+      [
+        "131391",
+        "Bandhan Gilt Fund with 10 year constant duration Fund - Regular Plan - Periodic IDCW"
       ]
     ],
     "dsp 10y g - sec fund": [
@@ -4465,6 +4463,16 @@
       [
         "139235",
         "Canara Robeco Liquid Fund -Unclaimed Redemption and Dividend Plan -Direct Growth Option"
+      ]
+    ],
+    "capitalmind liquid fund": [
+      [
+        "154011",
+        "Capitalmind Liquid Fund - Direct-Growth"
+      ],
+      [
+        "154010",
+        "Capitalmind Liquid Fund - Regular-Growth"
       ]
     ],
     "dsp liquidity fund": [
@@ -7389,70 +7397,68 @@
         "Axis Strategic Bond Fund - Regular Plan - Half Yearly IDCW"
       ]
     ],
-    "bandhan bond fund - medium term - - bi": [
-      [
-        "108730",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - Bi-Monthly IDCW"
-      ],
+    "bandhan medium duration fund - - bi": [
       [
         "118399",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Bi Monthly IDCW"
+        "Bandhan Medium Duration Fund - Direct Plan - Bi Monthly IDCW"
+      ],
+      [
+        "108730",
+        "Bandhan Medium Duration Fund - Regular Plan - Bi-Monthly IDCW"
       ]
     ],
-    "bandhan bond fund - medium term - - daily": [
-      [
-        "108731",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - Daily IDCW"
-      ],
+    "bandhan medium duration fund - - daily": [
       [
         "118400",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Daily IDCW"
+        "Bandhan Medium Duration Fund - Direct Plan - Daily IDCW"
+      ],
+      [
+        "108731",
+        "Bandhan Medium Duration Fund - Regular Plan - Daily IDCW"
       ]
     ],
-    "bandhan bond fund - medium term": [
-      [
-        "108729",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - Fortnightly IDCW"
-      ],
-      [
-        "108728",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - Growth"
-      ],
-      [
-        "113169",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - IDCW Quarterly"
-      ],
-      [
-        "108727",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - Monthly IDCW"
-      ],
+    "bandhan medium duration fund": [
       [
         "118404",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Fortnightly IDCW"
+        "Bandhan Medium Duration Fund - Direct Plan - Fortnightly IDCW"
       ],
       [
         "118401",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Growth"
+        "Bandhan Medium Duration Fund - Direct Plan - Growth"
       ],
       [
         "118402",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Monthly IDCW"
-      ]
-    ],
-    "bandhan bond fund - medium term - - periodic": [
-      [
-        "131385",
-        "BANDHAN Bond Fund - Medium Term - Regular Plan - Periodic IDCW"
+        "Bandhan Medium Duration Fund - Direct Plan - Monthly IDCW"
       ],
       [
-        "131384",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Periodic IDCW"
+        "118403",
+        "Bandhan Medium Duration Fund - Direct Plan - Quarterly IDCW"
+      ],
+      [
+        "108729",
+        "Bandhan Medium Duration Fund - Regular Plan - Fortnightly IDCW"
+      ],
+      [
+        "108728",
+        "Bandhan Medium Duration Fund - Regular Plan - Growth"
+      ],
+      [
+        "108727",
+        "Bandhan Medium Duration Fund - Regular Plan - Monthly IDCW"
+      ],
+      [
+        "113169",
+        "Bandhan Medium Duration Fund - Regular Plan - Quarterly IDCW"
       ]
     ],
-    "bandhan bond fund - medium term - - quartely": [
+    "bandhan medium duration fund - - periodic": [
       [
-        "118403",
-        "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Quartely IDCW"
+        "131384",
+        "Bandhan Medium Duration Fund - Direct Plan - Periodic IDCW"
+      ],
+      [
+        "131385",
+        "Bandhan Medium Duration Fund - Regular Plan - Periodic IDCW"
       ]
     ],
     "dsp bond fund": [
@@ -7839,94 +7845,94 @@
         "Aditya Birla Sun Life Income Fund - Regular - Quarterly IDCW"
       ]
     ],
-    "bandhan bond fund - income": [
-      [
-        "108766",
-        "BANDHAN Bond Fund - Income Plan - Regular Plan - Annual IDCW"
-      ],
-      [
-        "108765",
-        "BANDHAN Bond Fund - Income Plan - Regular Plan - Growth"
-      ],
-      [
-        "108764",
-        "BANDHAN Bond Fund - Income Plan - Regular Plan - Quarterly IDCW"
-      ],
+    "bandhan medium to long duration fund": [
       [
         "118393",
-        "BANDHAN Bond Fund - Income Plan-Direct Plan-Annual IDCW"
+        "Bandhan Medium to Long Duration Fund - Direct Plan - Annual IDCW"
       ],
       [
         "118394",
-        "BANDHAN Bond Fund - Income Plan-Direct Plan-Growth"
+        "Bandhan Medium to Long Duration Fund - Direct Plan - Growth"
       ],
       [
         "118396",
-        "BANDHAN Bond Fund - Income Plan-Direct Plan-Quarterly IDCW"
-      ]
-    ],
-    "bandhan bond fund - income - - half - yearly": [
-      [
-        "108763",
-        "BANDHAN Bond Fund - Income Plan - Regular Plan - Half-yearly IDCW"
-      ]
-    ],
-    "bandhan bond fund - income - - periodic": [
-      [
-        "131387",
-        "BANDHAN Bond Fund - Income Plan - Regular Plan - Periodic IDCW"
+        "Bandhan Medium to Long Duration Fund - Direct Plan - Quarterly IDCW"
       ],
       [
-        "131386",
-        "BANDHAN Bond Fund - Income Plan-Direct Plan-Periodic IDCW"
+        "108766",
+        "Bandhan Medium to Long Duration Fund - Regular Plan - Annual IDCW"
+      ],
+      [
+        "108765",
+        "Bandhan Medium to Long Duration Fund - Regular Plan - Growth"
+      ],
+      [
+        "108764",
+        "Bandhan Medium to Long Duration Fund - Regular Plan - Quarterly IDCW"
       ]
     ],
-    "bandhan bond fund - income - - half yearly": [
+    "bandhan medium to long duration fund - - half yearly": [
       [
         "118395",
-        "BANDHAN Bond Fund - Income Plan-Direct Plan-Half Yearly IDCW"
+        "Bandhan Medium to Long Duration Fund - Direct Plan - Half Yearly IDCW"
       ]
     ],
-    "bandhan bond fund - short term": [
+    "bandhan medium to long duration fund - - periodic": [
+      [
+        "131386",
+        "Bandhan Medium to Long Duration Fund - Direct Plan - Periodic IDCW"
+      ],
+      [
+        "131387",
+        "Bandhan Medium to Long Duration Fund - Regular Plan - Periodic IDCW"
+      ]
+    ],
+    "bandhan medium to long duration fund - - half - yearly": [
+      [
+        "108763",
+        "Bandhan Medium to Long Duration Fund - Regular Plan - Half-yearly IDCW"
+      ]
+    ],
+    "bandhan short duration fund": [
       [
         "108768",
-        "BANDHAN Bond Fund - Short Term - Regular Plan - Growth"
+        "Bandhan Short Duration Fund - Regular Plan - Growth"
       ],
       [
         "108767",
-        "BANDHAN Bond Fund - Short Term - Regular Plan - Monthly IDCW"
+        "Bandhan Short Duration Fund - Regular Plan - Monthly IDCW"
       ],
       [
         "143369",
-        "BANDHAN Bond Fund - Short Term - Direct Plan - Annual IDCW"
-      ],
-      [
-        "143367",
-        "BANDHAN Bond Fund - Short Term - Direct Plan - Quarterly IDCW"
-      ],
-      [
-        "143368",
-        "BANDHAN Bond Fund - Short Term - Regular Plan - Annual IDCW"
-      ],
-      [
-        "108713",
-        "BANDHAN Bond Fund - Short Term - Regular Plan - Fortnightly IDCW"
-      ],
-      [
-        "143366",
-        "BANDHAN Bond Fund - Short Term - Regular Plan - Quarterly IDCW"
+        "Bandhan Short Duration Fund - Direct Plan - Annual IDCW"
       ],
       [
         "118405",
-        "BANDHAN Bond Fund - Short Term-Direct Plan-Fortnightly IDCW"
+        "Bandhan Short Duration Fund - Direct Plan - Fortnightly IDCW"
       ],
       [
         "118407",
-        "BANDHAN Bond Fund - Short Term-Direct Plan-Growth"
+        "Bandhan Short Duration Fund - Direct Plan - Growth"
       ],
       [
         "118406",
-        "BANDHAN Bond Fund - Short Term-Direct Plan-Monthly IDCW"
+        "Bandhan Short Duration Fund - Direct Plan - Monthly IDCW"
+      ],
+      [
+        "143367",
+        "Bandhan Short Duration Fund - Direct Plan - Quarterly IDCW"
+      ],
+      [
+        "143368",
+        "Bandhan Short Duration Fund - Regular Plan - Annual IDCW"
+      ],
+      [
+        "108713",
+        "Bandhan Short Duration Fund - Regular Plan - Fortnightly IDCW"
+      ],
+      [
+        "143366",
+        "Bandhan Short Duration Fund - Regular Plan - Quarterly IDCW"
       ]
     ],
     "bank of india conservative hybrid fund": [
@@ -10003,10 +10009,6 @@
     ],
     "iti overnight fund": [
       [
-        "147707",
-        "ITI Overnight Fund - Direct Plan - Annual IDCW Option"
-      ],
-      [
         "147713",
         "ITI Overnight Fund - Direct Plan - Growth Option"
       ],
@@ -10041,6 +10043,12 @@
       [
         "153650",
         "JioBlackRock Overnight Fund - Direct Plan - Growth Option"
+      ]
+    ],
+    "jioblackrock overnight fund - unclaimed redemption - upto 3 years": [
+      [
+        "154070",
+        "JioBlackRock Overnight Fund - Unclaimed Redemption - Upto 3 years - Growth Option"
       ]
     ],
     "jm overnight fund - daily": [
@@ -10631,14 +10639,14 @@
         "Axis Short Duration Fund - Retail Plan - Weekly IDCW"
       ]
     ],
-    "bandhan bond fund - short term - - periodic": [
-      [
-        "131383",
-        "BANDHAN Bond Fund - Short Term - Regular Plan - Periodic IDCW"
-      ],
+    "bandhan short duration fund - - periodic": [
       [
         "131382",
-        "BANDHAN Bond Fund - Short Term-Direct Plan-Periodic IDCW"
+        "Bandhan Short Duration Fund - Direct Plan - Periodic IDCW"
+      ],
+      [
+        "131383",
+        "Bandhan Short Duration Fund - Regular Plan - Periodic IDCW"
       ]
     ],
     "bank of india short term income fund": [
@@ -17735,6 +17743,24 @@
         "Axis Services Opportunities Fund - Regular Plan - IDCW Option"
       ]
     ],
+    "bajaj finserv banking and financial services fund": [
+      [
+        "153937",
+        "Bajaj Finserv Banking and Financial Services Fund - Direct - Growth"
+      ],
+      [
+        "153938",
+        "Bajaj Finserv Banking and Financial Services Fund - Direct - IDCW"
+      ],
+      [
+        "153935",
+        "Bajaj Finserv Banking and Financial Services Fund - Regular - Growth"
+      ],
+      [
+        "153936",
+        "Bajaj Finserv Banking and Financial Services Fund - Regular - IDCW"
+      ]
+    ],
     "bajaj finserv consumption fund": [
       [
         "153075",
@@ -17805,6 +17831,24 @@
       [
         "151819",
         "BANDHAN FINANCIAL SERVICES FUND - REGULAR PLAN - IDCW"
+      ]
+    ],
+    "bandhan healthcare fund": [
+      [
+        "153972",
+        "Bandhan Healthcare Fund - Direct Plan - Growth"
+      ],
+      [
+        "153971",
+        "Bandhan Healthcare Fund - Direct Plan - IDCW"
+      ],
+      [
+        "153974",
+        "Bandhan Healthcare Fund - Regular Plan - Growth"
+      ],
+      [
+        "153973",
+        "Bandhan Healthcare Fund - Regular Plan - IDCW"
       ]
     ],
     "bandhan infrastructure fund": [
@@ -18359,6 +18403,24 @@
       [
         "112092",
         "Franklin Build India Fund Growth Plan"
+      ]
+    ],
+    "franklin india multi - factor fund": [
+      [
+        "153942",
+        "Franklin India Multi-Factor Fund- Direct- Growth"
+      ],
+      [
+        "153944",
+        "Franklin India Multi-Factor Fund- Direct- IDCW"
+      ],
+      [
+        "153943",
+        "Franklin India Multi-Factor Fund- Growth"
+      ],
+      [
+        "153941",
+        "Franklin India Multi-Factor Fund- IDCW"
       ]
     ],
     "franklin india opportunities fund": [
@@ -19619,6 +19681,28 @@
         "Kotak Quant Fund - Regular Plan - IDCW Payout"
       ]
     ],
+    "kotak rural opportunities fund": [
+      [
+        "153970",
+        "Kotak Rural Opportunities Fund - Direct Plan - Growth"
+      ],
+      [
+        "153969",
+        "Kotak Rural Opportunities Fund - Regular Plan - Growth"
+      ]
+    ],
+    "kotak rural opportunities fund - - divdend - payouout &": [
+      [
+        "153967",
+        "Kotak Rural Opportunities Fund - Direct Plan - IDCW Divdend - Payouout & Reinvestment"
+      ]
+    ],
+    "kotak rural opportunities fund - - - &": [
+      [
+        "153968",
+        "Kotak Rural Opportunities Fund - Regular Plan - IDCW Dividend - Payout & Reinvestment"
+      ]
+    ],
     "kotak special opportunities fund": [
       [
         "152702",
@@ -19693,6 +19777,24 @@
       [
         "134015",
         "LIC MF Banking and Financial Services Fund-Regular Plan-IDCW"
+      ]
+    ],
+    "lic mf consumption fund": [
+      [
+        "153948",
+        "LIC MF Consumption Fund-Direct Plan-Growth"
+      ],
+      [
+        "153949",
+        "LIC MF Consumption Fund-Direct Plan-IDCW"
+      ],
+      [
+        "153950",
+        "LIC MF Consumption Fund-Regular Plan-Growth"
+      ],
+      [
+        "153951",
+        "LIC MF Consumption Fund-Regular Plan-IDCW"
       ]
     ],
     "lic mf healthcare fund": [
@@ -21775,6 +21877,24 @@
       [
         "130504",
         "HDFC Small Cap Fund - IDCW Option - Direct Plan"
+      ]
+    ],
+    "helios small cap fund": [
+      [
+        "153912",
+        "Helios Small Cap Fund - Direct Plan - Growth Option"
+      ],
+      [
+        "153910",
+        "Helios Small Cap Fund - Direct Plan - IDCW Option"
+      ],
+      [
+        "153909",
+        "Helios Small Cap Fund - Regular Plan - Growth Option"
+      ],
+      [
+        "153911",
+        "Helios Small Cap Fund - Regular Plan - IDCW Option"
       ]
     ],
     "hsbc small cap fund": [
@@ -26277,6 +26397,24 @@
         "Nippon India Multi Asset Allocation Fund - Regular Plan - Growth Option"
       ]
     ],
+    "pgim india multi asset allocation fund": [
+      [
+        "153987",
+        "PGIM India Multi Asset Allocation Fund - Direct Plan - Growth Option"
+      ],
+      [
+        "153990",
+        "PGIM India Multi Asset Allocation Fund - Direct Plan - IDCW Option"
+      ],
+      [
+        "153988",
+        "PGIM India Multi Asset Allocation Fund - Regular Plan - Growth Option"
+      ],
+      [
+        "153989",
+        "PGIM India Multi Asset Allocation Fund - Regular Plan - IDCW Option"
+      ]
+    ],
     "quant multi asset allocation fund": [
       [
         "120820",
@@ -26773,64 +26911,40 @@
         "Axis Silver Fund of Fund- Direct Plan-Growth Option"
       ]
     ],
-    "bandhan asset allocation fund - - aggressive": [
-      [
-        "112332",
-        "BANDHAN Asset Allocation Fund - Regular Plan - Aggressive Plan - Growth"
-      ],
-      [
-        "112331",
-        "BANDHAN Asset Allocation Fund - Regular Plan - Aggressive Plan - IDCW"
-      ]
-    ],
-    "bandhan asset allocation fund of fund - aggressive": [
+    "bandhan aggressive hybrid passive fof": [
       [
         "118485",
-        "BANDHAN Asset Allocation Fund Of Fund-Aggressive Plan-Direct Plan-Growth"
+        "Bandhan Aggressive Hybrid Passive FOF - Direct Plan - Growth"
       ],
       [
         "118484",
-        "BANDHAN Asset Allocation Fund Of Fund-Aggressive Plan-Direct Plan-IDCW"
-      ]
-    ],
-    "bandhan asset allocation fund - - conservative": [
-      [
-        "112327",
-        "BANDHAN Asset Allocation Fund - Regular Plan - Conservative Plan - Growth"
+        "Bandhan Aggressive Hybrid Passive FOF - Direct Plan - IDCW"
       ],
       [
-        "112328",
-        "BANDHAN Asset Allocation Fund - Regular Plan - Conservative Plan - IDCW"
+        "112332",
+        "Bandhan Aggressive Hybrid Passive FOF - Regular Plan - Growth"
+      ],
+      [
+        "112331",
+        "Bandhan Aggressive Hybrid Passive FOF - Regular Plan - IDCW"
       ]
     ],
-    "bandhan asset allocation fund of fund - conservative": [
+    "bandhan conservative hybrid passive fof": [
       [
         "118486",
-        "BANDHAN Asset Allocation Fund Of Fund-Conservative Plan-Direct Plan-Growth"
+        "Bandhan Conservative Hybrid Passive FOF - Direct Plan - Growth"
       ],
       [
         "118487",
-        "BANDHAN Asset Allocation Fund Of Fund-Conservative Plan-Direct Plan-IDCW"
-      ]
-    ],
-    "bandhan asset allocation fund - - moderate": [
-      [
-        "112329",
-        "BANDHAN Asset Allocation Fund - Regular Plan - Moderate Plan - Growth"
+        "Bandhan Conservative Hybrid Passive FOF - Direct Plan - IDCW"
       ],
       [
-        "112330",
-        "BANDHAN Asset Allocation Fund - Regular Plan - Moderate Plan - IDCW"
-      ]
-    ],
-    "bandhan asset allocation fund of fund - moderate": [
-      [
-        "118489",
-        "BANDHAN Asset Allocation Fund Of Fund-Moderate Plan-Direct Plan-Growth"
+        "112327",
+        "Bandhan Conservative Hybrid Passive FOF - Regular Plan - Growth"
       ],
       [
-        "118488",
-        "BANDHAN Asset Allocation Fund Of Fund-Moderate Plan-Direct Plan-IDCW"
+        "112328",
+        "Bandhan Conservative Hybrid Passive FOF - Regular Plan - IDCW"
       ]
     ],
     "bandhan income plus arbitrage active fof": [
@@ -26903,6 +27017,24 @@
       [
         "131399",
         "Bandhan Income Plus Arbitrage Active FOF - Regular Plan - Periodic IDCW"
+      ]
+    ],
+    "bandhan multi - asset passive fof": [
+      [
+        "118489",
+        "Bandhan Multi-Asset Passive FOF - Direct Plan - Growth"
+      ],
+      [
+        "118488",
+        "Bandhan Multi-Asset Passive FOF - Direct Plan - IDCW"
+      ],
+      [
+        "112329",
+        "Bandhan Multi-Asset Passive FOF - Regular Plan - Growth"
+      ],
+      [
+        "112330",
+        "Bandhan Multi-Asset Passive FOF - Regular Plan - IDCW"
       ]
     ],
     "baroda bnp paribas gold etf fund of funds": [
@@ -27443,24 +27575,6 @@
         "HSBC Multi Asset Active FOF IDCW"
       ]
     ],
-    "icici prudential asset allocator fund": [
-      [
-        "120679",
-        "ICICI Prudential Asset Allocator Fund (FOF) - Direct Plan - Growth"
-      ],
-      [
-        "120680",
-        "ICICI Prudential Asset Allocator Fund (FOF) - Direct Plan - IDCW"
-      ],
-      [
-        "102137",
-        "ICICI Prudential Asset Allocator Fund (FOF) - Growth"
-      ],
-      [
-        "102138",
-        "ICICI Prudential Asset Allocator Fund (FOF) - IDCW"
-      ]
-    ],
     "icici prudential bharat 22 fof - cumulative": [
       [
         "143904",
@@ -27489,22 +27603,58 @@
         "ICICI Prudential BSE 500 ETF FOF - IDCW"
       ]
     ],
-    "icici prudential debt management fund": [
-      [
-        "120703",
-        "ICICI Prudential Debt Management Fund (FOF) - Direct Plan -  IDCW"
-      ],
+    "icici prudential diversified debt strategy active fof": [
       [
         "120702",
-        "ICICI Prudential Debt Management Fund (FOF) - Direct Plan - Growth"
+        "ICICI Prudential Diversified Debt Strategy Active FOF  - Direct Plan - Growth"
+      ],
+      [
+        "120703",
+        "ICICI Prudential Diversified Debt Strategy Active FOF - Direct Plan -  IDCW"
       ],
       [
         "102141",
-        "ICICI Prudential Debt Management Fund (FOF) - Growth"
+        "ICICI Prudential Diversified Debt Strategy Active FOF - Growth"
       ],
       [
         "102143",
-        "ICICI Prudential Debt Management Fund (FOF ) - IDCW"
+        "ICICI Prudential Diversified Debt Strategy Active FOF - IDCW"
+      ]
+    ],
+    "icici prudential diversified equity all cap omni fof": [
+      [
+        "148035",
+        "ICICI Prudential Diversified Equity All Cap Omni FOF - Direct Plan - Growth"
+      ],
+      [
+        "148036",
+        "ICICI Prudential Diversified Equity All Cap Omni FOF - Direct Plan - IDCW"
+      ],
+      [
+        "148033",
+        "ICICI Prudential Diversified Equity All Cap Omni FOF - Growth"
+      ],
+      [
+        "148034",
+        "ICICI Prudential Diversified Equity All Cap Omni FOF - IDCW"
+      ]
+    ],
+    "icici prudential dynamic asset allocation active fof": [
+      [
+        "120679",
+        "ICICI Prudential Dynamic Asset Allocation Active FOF - Direct Plan - Growth"
+      ],
+      [
+        "120680",
+        "ICICI Prudential Dynamic Asset Allocation Active FOF - Direct Plan - IDCW"
+      ],
+      [
+        "102137",
+        "ICICI Prudential Dynamic Asset Allocation Active FOF - Growth"
+      ],
+      [
+        "102138",
+        "ICICI Prudential Dynamic Asset Allocation Active FOF - IDCW"
       ]
     ],
     "icici prudential global advantage fund": [
@@ -27525,40 +27675,40 @@
         "ICICI Prudential Global Advantage Fund (FOF) - IDCW"
       ]
     ],
-    "icici prudential income plus arbitrage active fof": [
+    "icici prudential income plus arbitrage omni fof": [
       [
         "120313",
-        "ICICI Prudential Income plus Arbitrage Active FOF - Direct Plan - Growth"
+        "ICICI Prudential Income plus Arbitrage Omni FOF - Direct Plan - Growth"
       ],
       [
         "120314",
-        "ICICI Prudential Income plus Arbitrage Active FOF - Direct Plan - IDCW"
+        "ICICI Prudential Income plus Arbitrage Omni FOF - Direct Plan - IDCW"
       ],
       [
         "102139",
-        "ICICI Prudential Income Plus Arbitrage Active FOF - Growth"
+        "ICICI Prudential Income Plus Arbitrage Omni FOF - Growth"
       ],
       [
         "102140",
-        "ICICI Prudential Income plus Arbitrage Active FOF - IDCW"
+        "ICICI Prudential Income plus Arbitrage Omni FOF - IDCW"
       ]
     ],
-    "icici prudential india equity fof": [
+    "icici prudential multi sector passive fof": [
       [
-        "148035",
-        "ICICI Prudential India Equity FOF - Direct Plan - Growth"
+        "120243",
+        "ICICI Prudential Multi Sector Passive FOF - Direct Plan -  IDCW"
       ],
       [
-        "148036",
-        "ICICI Prudential India Equity FOF - Direct Plan - IDCW"
+        "120242",
+        "ICICI Prudential Multi Sector Passive FOF - Direct Plan - Growth"
       ],
       [
-        "148033",
-        "ICICI Prudential India Equity FOF - Growth"
+        "102133",
+        "ICICI Prudential Multi Sector Passive FOF - Growth"
       ],
       [
-        "148034",
-        "ICICI Prudential India Equity FOF - IDCW"
+        "102134",
+        "ICICI Prudential Multi Sector Passive FOF - IDCW"
       ]
     ],
     "icici prudential nifty 100 low volatility 30 etf fof": [
@@ -27631,24 +27781,6 @@
       [
         "149440",
         "ICICI Prudential Passive Multi-Asset Fund of Funds - IDCW"
-      ]
-    ],
-    "icici prudential passive strategy fund": [
-      [
-        "102134",
-        "ICICI Prudential Passive Strategy Fund (FOF) - IDCW"
-      ],
-      [
-        "120243",
-        "ICICI Prudential Passive Strategy Fund (FOF) - Direct Plan -  IDCW"
-      ],
-      [
-        "120242",
-        "ICICI Prudential Passive Strategy Fund (FOF) - Direct Plan - Growth"
-      ],
-      [
-        "102133",
-        "ICICI Prudential Passive Strategy Fund (FOF) - Growth"
       ]
     ],
     "icici prudential gold savings fund": [
@@ -30011,6 +30143,16 @@
         "ANGEL ONE NIFTY TOTAL MARKET INDEX FUND REGULAR PLAN GROWTH OPTION"
       ]
     ],
+    "angel one nifty total market momentum quality 50 index fund": [
+      [
+        "153956",
+        "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 INDEX FUND - DIRECT GROWTH"
+      ],
+      [
+        "153955",
+        "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 INDEX FUND - REGULAR GROWTH"
+      ]
+    ],
     "axis bse sensex index fund": [
       [
         "152422",
@@ -31225,24 +31367,6 @@
         "Edelweiss CRISIL IBX AAA Financial Services - Jan 2028 Index Fund - Regular - IDCW - Payout"
       ]
     ],
-    "edelweiss crisil psu plus sdl 50 50 oct 2025 index fund": [
-      [
-        "149945",
-        "Edelweiss CRISIL PSU Plus SDL 50:50 Oct 2025 Index Fund - Direct Plan - IDCW Payout"
-      ],
-      [
-        "149950",
-        "Edelweiss CRISIL PSU Plus SDL 50:50 Oct 2025 Index Fund - Direct Plan Growth"
-      ],
-      [
-        "149947",
-        "Edelweiss CRISIL PSU Plus SDL 50:50 Oct 2025 Index Fund - Regular Plan - IDCW Payout"
-      ],
-      [
-        "149949",
-        "Edelweiss CRISIL PSU Plus SDL 50:50 Oct 2025 Index Fund - Regular Plan Growth"
-      ]
-    ],
     "edelweiss msci india domestic & world healthcare 45 index fund": [
       [
         "148556",
@@ -31587,14 +31711,24 @@
     ],
     "hdfc bse 500 index fund": [
       [
+        "151728",
+        "HDFC BSE 500 Index Fund - Growth Option - Direct Plan"
+      ],
+      [
         "151729",
         "HDFC BSE 500 Index Fund - Regular Plan - Growth Option"
       ]
     ],
-    "hdfc s&p bse 500 index fund": [
+    "hdfc bse india sector leaders index fund": [
       [
-        "151728",
-        "HDFC S&P BSE 500 Index Fund - Growth Option - Direct Plan"
+        "153958",
+        "HDFC BSE India Sector Leaders Index Fund - Regular Plan - Growth Option"
+      ]
+    ],
+    "hdfc bse india sector leaders india fund": [
+      [
+        "153959",
+        "HDFC BSE India Sector Leaders India Fund - Direct Plan - Growth Option"
       ]
     ],
     "hdfc bse sensex index fund": [
@@ -35249,6 +35383,12 @@
         "ANGEL ONE NIFTY TOTAL MARKET ETF"
       ]
     ],
+    "angel one nifty total market momentum quality 50 etf": [
+      [
+        "153957",
+        "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 ETF"
+      ]
+    ],
     "axis bse sensex etf": [
       [
         "151585",
@@ -35357,6 +35497,12 @@
         "DSP BSE SENSEX Next 30 ETF"
       ]
     ],
+    "dsp msci india etf": [
+      [
+        "153975",
+        "DSP MSCI INDIA ETF"
+      ]
+    ],
     "dsp nifty 1d rate liquid etf": [
       [
         "142589",
@@ -35459,10 +35605,22 @@
         "Edelweiss BSE Capital Markets & Insurance  ETF - Growth"
       ]
     ],
+    "edelweiss bse sensex etf": [
+      [
+        "153947",
+        "Edelweiss BSE Sensex ETF - Growth"
+      ]
+    ],
     "edelweiss nifty 1d rate liquid etf": [
       [
         "153920",
         "Edelweiss Nifty 1D Rate Liquid ETF - Growth"
+      ]
+    ],
+    "edelweiss nifty 50 etf": [
+      [
+        "153966",
+        "Edelweiss Nifty 50 ETF - Growth"
       ]
     ],
     "edelweiss nifty bank etf": [
@@ -35523,6 +35681,12 @@
       [
         "153452",
         "Groww Nifty 500 Momentum 50 ETF"
+      ]
+    ],
+    "groww nifty capital markets etf": [
+      [
+        "153907",
+        "Groww Nifty Capital Markets ETF"
       ]
     ],
     "groww nifty ev & new age automotive etf": [
@@ -36361,6 +36525,12 @@
         "Motilal Oswal Nifty Midcap150 Momentum 50 ETF"
       ]
     ],
+    "motilal oswal nifty mnc etf": [
+      [
+        "154062",
+        "Motilal Oswal Nifty MNC ETF"
+      ]
+    ],
     "motilal oswal nifty next 50 etf": [
       [
         "153535",
@@ -36377,6 +36547,12 @@
       [
         "152541",
         "Motilal Oswal Nifty Realty ETF"
+      ]
+    ],
+    "motilal oswal nifty services sector etf": [
+      [
+        "154033",
+        "Motilal Oswal Nifty Services Sector ETF"
       ]
     ],
     "motilal oswal nifty smallcap 250 etf": [
@@ -38661,41 +38837,35 @@
       "direct_growth",
       100.0
     ],
-    "bandhan government securities fund - ip - - b - half yearly": [
-      "108558",
-      "BANDHAN Government Securities Fund - IP - Regular - Plan B - Half Yearly IDCW",
-      "highest_aum_cached",
-      0.0
-    ],
-    "bandhan government securities fund - ip": [
-      "111525",
-      "BANDHAN Government Securities Fund - IP - Regular Plan - Growth",
-      "regular_growth",
-      60.0
-    ],
-    "bandhan government securities fund - ip - - b - periodic": [
-      "131395",
-      "BANDHAN Government Securities Fund - IP - Regular -Plan B - Periodic IDCW",
-      "highest_aum_cached",
-      0.0
-    ],
-    "bandhan government securities fund - investment": [
+    "bandhan gilt fund": [
       "118464",
-      "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Growth",
+      "Bandhan Gilt Fund - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
-    "bandhan government securities fund - investment - - half yearly": [
+    "bandhan gilt fund - - half yearly": [
       "118465",
-      "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Half Yearly IDCW",
+      "Bandhan Gilt Fund - Direct Plan - Half Yearly IDCW",
       "direct",
       80.0
     ],
-    "bandhan government securities fund - investment - - periodic": [
+    "bandhan gilt fund - - periodic": [
       "131394",
-      "BANDHAN Government Securities Fund-  Investment Plan-Direct Plan-Periodic IDCW",
+      "Bandhan Gilt Fund - Direct Plan - Periodic IDCW",
       "direct",
       80.0
+    ],
+    "bandhan gilt fund - b - periodic": [
+      "131395",
+      "Bandhan Gilt Fund - Regular Plan B - Periodic IDCW",
+      "highest_aum_cached",
+      0.0
+    ],
+    "bandhan gilt fund - - b - half yearly": [
+      "108558",
+      "Bandhan Gilt Fund - Regular - Plan B - Half Yearly IDCW",
+      "highest_aum_cached",
+      0.0
     ],
     "baroda bnp paribas gilt fund": [
       "119341",
@@ -38907,15 +39077,15 @@
       "direct",
       80.0
     ],
-    "bandhan government securities fund - constant maturity": [
+    "bandhan gilt fund with 10 year constant duration fund": [
       "118387",
-      "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Growth",
+      "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
-    "bandhan government securities fund - constant maturity - - periodic": [
+    "bandhan gilt fund with 10 year constant duration fund - - periodic": [
       "131390",
-      "BANDHAN Government Securities Fund - Constant Maturity Plan -Direct Plan-Periodic IDCW",
+      "Bandhan Gilt Fund with 10 year constant duration Fund - Direct Plan - Periodic IDCW",
       "direct",
       80.0
     ],
@@ -39126,6 +39296,12 @@
     "canara robeco liquid fund - unclaimed redemption and": [
       "139235",
       "Canara Robeco Liquid Fund -Unclaimed Redemption and Dividend Plan -Direct Growth Option",
+      "direct_growth",
+      100.0
+    ],
+    "capitalmind liquid fund": [
+      "154011",
+      "Capitalmind Liquid Fund - Direct-Growth",
       "direct_growth",
       100.0
     ],
@@ -40443,33 +40619,27 @@
       "direct",
       80.0
     ],
-    "bandhan bond fund - medium term - - bi": [
+    "bandhan medium duration fund - - bi": [
       "118399",
-      "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Bi Monthly IDCW",
+      "Bandhan Medium Duration Fund - Direct Plan - Bi Monthly IDCW",
       "direct",
       80.0
     ],
-    "bandhan bond fund - medium term - - daily": [
+    "bandhan medium duration fund - - daily": [
       "118400",
-      "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Daily IDCW",
+      "Bandhan Medium Duration Fund - Direct Plan - Daily IDCW",
       "direct",
       80.0
     ],
-    "bandhan bond fund - medium term": [
+    "bandhan medium duration fund": [
       "118401",
-      "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Growth",
+      "Bandhan Medium Duration Fund - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
-    "bandhan bond fund - medium term - - periodic": [
+    "bandhan medium duration fund - - periodic": [
       "131384",
-      "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Periodic IDCW",
-      "direct",
-      80.0
-    ],
-    "bandhan bond fund - medium term - - quartely": [
-      "118403",
-      "BANDHAN Bond Fund - Medium Term Plan-Direct Plan-Quartely IDCW",
+      "Bandhan Medium Duration Fund - Direct Plan - Periodic IDCW",
       "direct",
       80.0
     ],
@@ -40617,33 +40787,33 @@
       "direct_growth",
       100.0
     ],
-    "bandhan bond fund - income": [
+    "bandhan medium to long duration fund": [
       "118394",
-      "BANDHAN Bond Fund - Income Plan-Direct Plan-Growth",
+      "Bandhan Medium to Long Duration Fund - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
-    "bandhan bond fund - income - - half - yearly": [
+    "bandhan medium to long duration fund - - half yearly": [
+      "118395",
+      "Bandhan Medium to Long Duration Fund - Direct Plan - Half Yearly IDCW",
+      "direct",
+      80.0
+    ],
+    "bandhan medium to long duration fund - - periodic": [
+      "131386",
+      "Bandhan Medium to Long Duration Fund - Direct Plan - Periodic IDCW",
+      "direct",
+      80.0
+    ],
+    "bandhan medium to long duration fund - - half - yearly": [
       "108763",
-      "BANDHAN Bond Fund - Income Plan - Regular Plan - Half-yearly IDCW",
+      "Bandhan Medium to Long Duration Fund - Regular Plan - Half-yearly IDCW",
       "highest_aum_cached",
       0.0
     ],
-    "bandhan bond fund - income - - periodic": [
-      "131386",
-      "BANDHAN Bond Fund - Income Plan-Direct Plan-Periodic IDCW",
-      "direct",
-      80.0
-    ],
-    "bandhan bond fund - income - - half yearly": [
-      "118395",
-      "BANDHAN Bond Fund - Income Plan-Direct Plan-Half Yearly IDCW",
-      "direct",
-      80.0
-    ],
-    "bandhan bond fund - short term": [
+    "bandhan short duration fund": [
       "118407",
-      "BANDHAN Bond Fund - Short Term-Direct Plan-Growth",
+      "Bandhan Short Duration Fund - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
@@ -41661,6 +41831,12 @@
       "direct_growth",
       100.0
     ],
+    "jioblackrock overnight fund - unclaimed redemption - upto 3 years": [
+      "154070",
+      "JioBlackRock Overnight Fund - Unclaimed Redemption - Upto 3 years - Growth Option",
+      "highest_aum_cached",
+      0.0
+    ],
     "jm overnight fund - daily": [
       "147838",
       "JM Overnight Fund (Direct) - Daily IDCW",
@@ -41961,9 +42137,9 @@
       "direct_growth",
       100.0
     ],
-    "bandhan bond fund - short term - - periodic": [
+    "bandhan short duration fund - - periodic": [
       "131382",
-      "BANDHAN Bond Fund - Short Term-Direct Plan-Periodic IDCW",
+      "Bandhan Short Duration Fund - Direct Plan - Periodic IDCW",
       "direct",
       80.0
     ],
@@ -44541,6 +44717,12 @@
       "direct_growth",
       100.0
     ],
+    "bajaj finserv banking and financial services fund": [
+      "153937",
+      "Bajaj Finserv Banking and Financial Services Fund - Direct - Growth",
+      "direct_growth",
+      100.0
+    ],
     "bajaj finserv consumption fund": [
       "153075",
       "BAJAJ FINSERV CONSUMPTION FUND - DIRECT - GROWTH",
@@ -44562,6 +44744,12 @@
     "bandhan financial services fund": [
       "151816",
       "BANDHAN FINANCIAL SERVICES FUND - DIRECT PLAN - GROWTH",
+      "direct_growth",
+      100.0
+    ],
+    "bandhan healthcare fund": [
+      "153972",
+      "Bandhan Healthcare Fund - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
@@ -44760,6 +44948,12 @@
     "franklin build india fund": [
       "118557",
       "Franklin Build India Fund - Direct - Growth",
+      "direct_growth",
+      100.0
+    ],
+    "franklin india multi - factor fund": [
+      "153942",
+      "Franklin India Multi-Factor Fund- Direct- Growth",
       "direct_growth",
       100.0
     ],
@@ -45249,6 +45443,24 @@
       "direct_growth",
       100.0
     ],
+    "kotak rural opportunities fund": [
+      "153970",
+      "Kotak Rural Opportunities Fund - Direct Plan - Growth",
+      "direct_growth",
+      100.0
+    ],
+    "kotak rural opportunities fund - - divdend - payouout &": [
+      "153967",
+      "Kotak Rural Opportunities Fund - Direct Plan - IDCW Divdend - Payouout & Reinvestment",
+      "direct",
+      80.0
+    ],
+    "kotak rural opportunities fund - - - &": [
+      "153968",
+      "Kotak Rural Opportunities Fund - Regular Plan - IDCW Dividend - Payout & Reinvestment",
+      "highest_aum_cached",
+      0.0
+    ],
     "kotak special opportunities fund": [
       "152702",
       "Kotak Special Opportunities Fund - Direct Plan - Growth Option",
@@ -45282,6 +45494,12 @@
     "lic mf banking and financial services fund": [
       "134017",
       "LIC MF Banking and Financial Services Fund-Direct Plan-Growth",
+      "direct_growth",
+      100.0
+    ],
+    "lic mf consumption fund": [
+      "153948",
+      "LIC MF Consumption Fund-Direct Plan-Growth",
       "direct_growth",
       100.0
     ],
@@ -46056,6 +46274,12 @@
     "hdfc small cap fund": [
       "130503",
       "HDFC Small Cap Fund - Growth Option - Direct Plan",
+      "direct_growth",
+      100.0
+    ],
+    "helios small cap fund": [
+      "153912",
+      "Helios Small Cap Fund - Direct Plan - Growth Option",
       "direct_growth",
       100.0
     ],
@@ -47571,6 +47795,12 @@
       "direct_growth",
       100.0
     ],
+    "pgim india multi asset allocation fund": [
+      "153987",
+      "PGIM India Multi Asset Allocation Fund - Direct Plan - Growth Option",
+      "direct_growth",
+      100.0
+    ],
     "quant multi asset allocation fund": [
       "120821",
       "quant Multi Asset Allocation Fund-GROWTH OPTION-Direct Plan",
@@ -47751,39 +47981,15 @@
       "direct_growth",
       100.0
     ],
-    "bandhan asset allocation fund - - aggressive": [
-      "112332",
-      "BANDHAN Asset Allocation Fund - Regular Plan - Aggressive Plan - Growth",
-      "regular_growth",
-      60.0
-    ],
-    "bandhan asset allocation fund of fund - aggressive": [
+    "bandhan aggressive hybrid passive fof": [
       "118485",
-      "BANDHAN Asset Allocation Fund Of Fund-Aggressive Plan-Direct Plan-Growth",
+      "Bandhan Aggressive Hybrid Passive FOF - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
-    "bandhan asset allocation fund - - conservative": [
-      "112327",
-      "BANDHAN Asset Allocation Fund - Regular Plan - Conservative Plan - Growth",
-      "regular_growth",
-      60.0
-    ],
-    "bandhan asset allocation fund of fund - conservative": [
+    "bandhan conservative hybrid passive fof": [
       "118486",
-      "BANDHAN Asset Allocation Fund Of Fund-Conservative Plan-Direct Plan-Growth",
-      "direct_growth",
-      100.0
-    ],
-    "bandhan asset allocation fund - - moderate": [
-      "112329",
-      "BANDHAN Asset Allocation Fund - Regular Plan - Moderate Plan - Growth",
-      "regular_growth",
-      60.0
-    ],
-    "bandhan asset allocation fund of fund - moderate": [
-      "118489",
-      "BANDHAN Asset Allocation Fund Of Fund-Moderate Plan-Direct Plan-Growth",
+      "Bandhan Conservative Hybrid Passive FOF - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
@@ -47810,6 +48016,12 @@
       "Bandhan Income Plus Arbitrage Active FOF - Direct Plan - Periodic IDCW",
       "direct",
       80.0
+    ],
+    "bandhan multi - asset passive fof": [
+      "118489",
+      "Bandhan Multi-Asset Passive FOF - Direct Plan - Growth",
+      "direct_growth",
+      100.0
     ],
     "baroda bnp paribas gold etf fund of funds": [
       "153795",
@@ -48009,12 +48221,6 @@
       "direct_growth",
       100.0
     ],
-    "icici prudential asset allocator fund": [
-      "120679",
-      "ICICI Prudential Asset Allocator Fund (FOF) - Direct Plan - Growth",
-      "direct_growth",
-      100.0
-    ],
     "icici prudential bharat 22 fof - cumulative": [
       "143903",
       "ICICI Prudential BHARAT 22 FOF - Direct Plan Cumulative Option",
@@ -48027,9 +48233,21 @@
       "direct_growth",
       100.0
     ],
-    "icici prudential debt management fund": [
+    "icici prudential diversified debt strategy active fof": [
       "120702",
-      "ICICI Prudential Debt Management Fund (FOF) - Direct Plan - Growth",
+      "ICICI Prudential Diversified Debt Strategy Active FOF  - Direct Plan - Growth",
+      "direct_growth",
+      100.0
+    ],
+    "icici prudential diversified equity all cap omni fof": [
+      "148035",
+      "ICICI Prudential Diversified Equity All Cap Omni FOF - Direct Plan - Growth",
+      "direct_growth",
+      100.0
+    ],
+    "icici prudential dynamic asset allocation active fof": [
+      "120679",
+      "ICICI Prudential Dynamic Asset Allocation Active FOF - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
@@ -48039,15 +48257,15 @@
       "direct_growth",
       100.0
     ],
-    "icici prudential income plus arbitrage active fof": [
+    "icici prudential income plus arbitrage omni fof": [
       "120313",
-      "ICICI Prudential Income plus Arbitrage Active FOF - Direct Plan - Growth",
+      "ICICI Prudential Income plus Arbitrage Omni FOF - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
-    "icici prudential india equity fof": [
-      "148035",
-      "ICICI Prudential India Equity FOF - Direct Plan - Growth",
+    "icici prudential multi sector passive fof": [
+      "120242",
+      "ICICI Prudential Multi Sector Passive FOF - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
@@ -48072,12 +48290,6 @@
     "icici prudential passive multi - asset fund of funds": [
       "149441",
       "ICICI Prudential Passive Multi-Asset Fund of Funds - Direct Plan - Growth",
-      "direct_growth",
-      100.0
-    ],
-    "icici prudential passive strategy fund": [
-      "120242",
-      "ICICI Prudential Passive Strategy Fund (FOF) - Direct Plan - Growth",
       "direct_growth",
       100.0
     ],
@@ -49113,6 +49325,12 @@
       "direct_growth",
       100.0
     ],
+    "angel one nifty total market momentum quality 50 index fund": [
+      "153956",
+      "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 INDEX FUND - DIRECT GROWTH",
+      "direct_growth",
+      100.0
+    ],
     "axis bse sensex index fund": [
       "152422",
       "Axis BSE Sensex Index Fund - Direct Plan - Growth",
@@ -49575,12 +49793,6 @@
       "direct_growth",
       100.0
     ],
-    "edelweiss crisil psu plus sdl 50 50 oct 2025 index fund": [
-      "149950",
-      "Edelweiss CRISIL PSU Plus SDL 50:50 Oct 2025 Index Fund - Direct Plan Growth",
-      "direct_growth",
-      100.0
-    ],
     "edelweiss msci india domestic & world healthcare 45 index fund": [
       "148555",
       "Edelweiss MSCI India Domestic & World Healthcare 45 Index Fund Direct Plan - Growth",
@@ -49696,14 +49908,20 @@
       100.0
     ],
     "hdfc bse 500 index fund": [
-      "151729",
-      "HDFC BSE 500 Index Fund - Regular Plan - Growth Option",
+      "151728",
+      "HDFC BSE 500 Index Fund - Growth Option - Direct Plan",
+      "direct_growth",
+      100.0
+    ],
+    "hdfc bse india sector leaders index fund": [
+      "153958",
+      "HDFC BSE India Sector Leaders Index Fund - Regular Plan - Growth Option",
       "regular_growth",
       60.0
     ],
-    "hdfc s&p bse 500 index fund": [
-      "151728",
-      "HDFC S&P BSE 500 Index Fund - Growth Option - Direct Plan",
+    "hdfc bse india sector leaders india fund": [
+      "153959",
+      "HDFC BSE India Sector Leaders India Fund - Direct Plan - Growth Option",
       "direct_growth",
       100.0
     ],
@@ -51327,6 +51545,12 @@
       "highest_aum_cached",
       0.0
     ],
+    "angel one nifty total market momentum quality 50 etf": [
+      "153957",
+      "ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 ETF",
+      "highest_aum_cached",
+      0.0
+    ],
     "axis bse sensex etf": [
       "151585",
       "Axis BSE Sensex ETF",
@@ -51435,6 +51659,12 @@
       "highest_aum_cached",
       0.0
     ],
+    "dsp msci india etf": [
+      "153975",
+      "DSP MSCI INDIA ETF",
+      "highest_aum_cached",
+      0.0
+    ],
     "dsp nifty 1d rate liquid etf": [
       "142589",
       "DSP NIFTY 1D Rate Liquid ETF",
@@ -51537,9 +51767,21 @@
       "highest_aum_cached",
       0.0
     ],
+    "edelweiss bse sensex etf": [
+      "153947",
+      "Edelweiss BSE Sensex ETF - Growth",
+      "highest_aum_cached",
+      0.0
+    ],
     "edelweiss nifty 1d rate liquid etf": [
       "153920",
       "Edelweiss Nifty 1D Rate Liquid ETF - Growth",
+      "highest_aum_cached",
+      0.0
+    ],
+    "edelweiss nifty 50 etf": [
+      "153966",
+      "Edelweiss Nifty 50 ETF - Growth",
       "highest_aum_cached",
       0.0
     ],
@@ -51600,6 +51842,12 @@
     "groww nifty 500 momentum 50 etf": [
       "153452",
       "Groww Nifty 500 Momentum 50 ETF",
+      "highest_aum_cached",
+      0.0
+    ],
+    "groww nifty capital markets etf": [
+      "153907",
+      "Groww Nifty Capital Markets ETF",
       "highest_aum_cached",
       0.0
     ],
@@ -52431,6 +52679,12 @@
       "highest_aum_cached",
       0.0
     ],
+    "motilal oswal nifty mnc etf": [
+      "154062",
+      "Motilal Oswal Nifty MNC ETF",
+      "highest_aum_cached",
+      0.0
+    ],
     "motilal oswal nifty next 50 etf": [
       "153535",
       "MOTILAL OSWAL NIFTY NEXT 50 ETF",
@@ -52446,6 +52700,12 @@
     "motilal oswal nifty realty etf": [
       "152541",
       "Motilal Oswal Nifty Realty ETF",
+      "highest_aum_cached",
+      0.0
+    ],
+    "motilal oswal nifty services sector etf": [
+      "154033",
+      "Motilal Oswal Nifty Services Sector ETF",
       "highest_aum_cached",
       0.0
     ],

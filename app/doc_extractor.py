@@ -1,6 +1,5 @@
+# app/doc_extractor.py
 """
-doc_extractor.py
-------------------------------------------
 Section-based SID extractor (Phase 3)
 
 Structure assumed:
@@ -24,10 +23,43 @@ PART 3:
 """
 
 import os
+import sys
 import json
+import argparse
+import time
+import importlib
 from typing import List, Dict, Any, Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from .doc_loader import extract_paragraphs
+# -------------------------
+# Robust import of extract_paragraphs from doc_loader
+# Try (in order):
+#  1) relative import (works when run as module)
+#  2) absolute import app.doc_loader (works when package installed / PYTHONPATH has repo root)
+#  3) direct import by adding the app/ dir to sys.path and importing doc_loader as a plain module
+# -------------------------
+try:
+    # Preferred when running as module: python -m app.doc_extractor
+    from .doc_loader import extract_paragraphs  # type: ignore
+except Exception:
+    try:
+        # Try absolute package import (works if repo root is on PYTHONPATH)
+        from app.doc_loader import extract_paragraphs  # type: ignore
+    except Exception:
+        # Final fallback: import doc_loader from same directory by adding app/ to sys.path
+        # Compute the directory containing this file (app/)
+        _app_dir = os.path.dirname(__file__)
+        if _app_dir not in sys.path:
+            sys.path.insert(0, _app_dir)
+        try:
+            _mod = importlib.import_module("doc_loader")
+            extract_paragraphs = getattr(_mod, "extract_paragraphs")
+        except Exception as e:
+            # give a clear error with details
+            raise ImportError(
+                "Failed to import extract_paragraphs from doc_loader via relative, absolute, and fallback imports. "
+                f"Details: {e}"
+            ) from e
 
 # -------------------------
 # Paths / constants
@@ -411,12 +443,150 @@ def parse_scheme_pdf(pdf_path: str, scheme_code: str, model: str = "gpt-4o-mini"
     return result
 
 
+# -------------------------
+# Helper: mtime checks and batch processing (timestamp-aware)
+# -------------------------
+
+def _pdf_or_json_mtime(path: str) -> Optional[float]:
+    try:
+        return os.path.getmtime(path)
+    except Exception:
+        return None
+
+
+SID_INDEX_PATH_DEFAULT = os.path.join(DATA_DIR, "sid_index.json")
+
+
+def process_sid_index(
+    index_path: str = SID_INDEX_PATH_DEFAULT,
+    force: bool = False,
+    limit: Optional[int] = None,
+    workers: int = 1,
+    model: str = "gpt-4o-mini",
+):
+    """
+    Load data/sid_index.json and run parse_scheme_pdf for each mapping.
+
+    Extraction decision logic:
+      - If JSON output does not exist => extract.
+      - If JSON exists, compare mtimes:
+          if pdf_mtime > json_mtime => extract (pdf is newer)
+          else => skip
+      - --force overrides and extracts regardless.
+    """
+    if not os.path.exists(index_path):
+        log(f"SID index not found: {index_path}")
+        return {"processed": 0, "skipped": 0, "failed": 0}
+
+    with open(index_path, "r", encoding="utf-8") as f:
+        idx = json.load(f)
+
+    items = list(idx.items())
+    total = len(items)
+    if limit and limit > 0:
+        items = items[:limit]
+        log(f"Limiting to first {len(items)} entries (limit={limit})")
+
+    processed = 0
+    skipped = 0
+    failed = 0
+    start = time.time()
+
+    def _needs_extraction(code: str, pdf_path: str) -> bool:
+        """
+        Return True if we should extract:
+          - force == True
+          - JSON missing
+          - PDF mtime > JSON mtime
+        """
+        if force:
+            return True
+        out_path = os.path.join(SCHEME_DOCS_DIR, f"{str(code).strip()}.json")
+        if not os.path.exists(out_path):
+            return True
+        pdf_m = _pdf_or_json_mtime(pdf_path)
+        json_m = _pdf_or_json_mtime(out_path)
+        # If we can't stat pdf, be conservative (attempt extraction)
+        if pdf_m is None:
+            return True
+        # If json mtime missing treat as extract
+        if json_m is None:
+            return True
+        # Extract only if pdf modified after json
+        return pdf_m > json_m
+
+    # Sequential processing
+    if workers and int(workers) <= 1:
+        log(f"Processing {len(items)} entries sequentially.")
+        for code, pdf in items:
+            try:
+                if not _needs_extraction(code, pdf):
+                    skipped += 1
+                else:
+                    parse_scheme_pdf(pdf, code, model=model)
+                    processed += 1
+            except Exception as e:
+                log(f"Failed {code} ({pdf}): {e}")
+                failed += 1
+            elapsed = time.time() - start
+            # minimal progress line
+            log(f"Progress: {processed}/{len(items)} processed, {skipped} skipped, {failed} failed. Elapsed: {int(elapsed)}s")
+    else:
+        # Parallel processing with thread pool
+        log(f"Processing {len(items)} entries with {workers} workers (parallel).")
+        # Submit only tasks that need extraction; count skipped separately
+        to_submit = []
+        for code, pdf in items:
+            if _needs_extraction(code, pdf):
+                to_submit.append((code, pdf))
+            else:
+                skipped += 1
+
+        if not to_submit:
+            total_elapsed = time.time() - start
+            log(f"Nothing to do. Total entries: {total}. Processed: {processed}. Skipped: {skipped}. Failed: {failed}. Total time: {int(total_elapsed)}s")
+            return {"processed": processed, "skipped": skipped, "failed": failed, "elapsed_s": int(total_elapsed)}
+
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            futures = {ex.submit(parse_scheme_pdf, pdf, code, model): (code, pdf) for (code, pdf) in to_submit}
+            for fut in as_completed(futures):
+                code, pdf = futures[fut]
+                try:
+                    fut.result()
+                    processed += 1
+                except Exception as e:
+                    log(f"Failed {code} ({pdf}): {e}")
+                    failed += 1
+                elapsed = time.time() - start
+                # minimal progress line
+                log(f"Progress: {processed}/{len(items)} processed, {skipped} skipped, {failed} failed. Elapsed: {int(elapsed)}s")
+
+    total_elapsed = time.time() - start
+    log(f"Done. Total entries: {total}. Processed: {processed}. Skipped: {skipped}. Failed: {failed}. Total time: {int(total_elapsed)}s")
+    return {"processed": processed, "skipped": skipped, "failed": failed, "elapsed_s": int(total_elapsed)}
+
+
+# -------------------------
+# CLI: process-all or single-file modes
+# -------------------------
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) < 3:
-        print("Usage: python -m app.doc_extractor <pdf_path> <scheme_code>")
-        raise SystemExit(1)
-    pdf = sys.argv[1]
-    code = sys.argv[2]
-    res = parse_scheme_pdf(pdf, code)
-    print(json.dumps(res, indent=2, ensure_ascii=False))
+    parser = argparse.ArgumentParser(description="SID extractor / batch processor")
+    parser.add_argument("pdf_path", nargs="?", help="Path to a single SID PDF (optional)")
+    parser.add_argument("scheme_code", nargs="?", help="Scheme code for single PDF (optional)")
+    parser.add_argument("--process-all", dest="process_all", action="store_true", help="Process all entries in data/sid_index.json")
+    parser.add_argument("--index", default=SID_INDEX_PATH_DEFAULT, help="Path to sid_index.json")
+    parser.add_argument("--force", action="store_true", help="Overwrite / re-extract regardless of timestamps")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process")
+    parser.add_argument("--workers", type=int, default=1, help="Parallel workers (1 = sequential)")
+    parser.add_argument("--model", default="gpt-4o-mini", help="LLM model to use (if available)")
+    args = parser.parse_args()
+
+    if args.process_all:
+        process_sid_index(index_path=args.index, force=args.force, limit=args.limit, workers=args.workers, model=args.model)
+    else:
+        # single-file mode
+        if not args.pdf_path or not args.scheme_code:
+            print("Usage: python -m app.doc_extractor <pdf_path> <scheme_code>    OR")
+            print("       python -m app.doc_extractor --process-all [--index data/sid_index.json] [--force] [--workers 4]")
+            raise SystemExit(1)
+        parse_scheme_pdf(args.pdf_path, args.scheme_code, model=args.model)
