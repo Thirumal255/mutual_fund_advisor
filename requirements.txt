@@ -14,6 +14,6 @@ pyarrow
 fastparquet
 openai
 jinja2
-passlib[bcrypt]
 itsdangerous
-python-multipart
+python-jose[cryptography]
+python-dotenv

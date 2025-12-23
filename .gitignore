@@ -1,11 +1,13 @@
 # Secrets
 OPENAI_API_KEY.txt
+notes.txt
 data/.openai_api_key
 
 # Raw PDFs or dumps
 sid_all/
 data/sid_pdfs/
 data/scheme_docs/
+data/nav_cache/
 
 # Bytecode
 __pycache__/

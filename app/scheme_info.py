@@ -16,6 +16,7 @@ import os
 import json
 import re
 from typing import Any, Dict, List, Optional
+from datetime import datetime, timezone  # >>> ADDITION
 
 BASE_DIR = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -24,6 +25,8 @@ METRICS_PARENT_REPS_PATH = os.path.join(DATA_DIR, "metrics_parent_reps.json")
 METRICS_BY_CODE_PATH = os.path.join(DATA_DIR, "metrics_by_code.json")
 SCHEME_DOCS_DIR = os.path.join(DATA_DIR, "scheme_docs")
 OUTPUT_UI_PATH = os.path.join(DATA_DIR, "metrics_ui.json")
+SYSTEM_STATUS_FILE = os.path.join(DATA_DIR, "system_status.json")
+
 
 
 # ---------------------------
@@ -66,6 +69,32 @@ def _coerce_num(val: Any) -> Optional[float]:
         except Exception:
             return None
     return None
+
+# ---------------------------
+# STATUS HELPERS (ADDITION ONLY)
+# ---------------------------
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _update_ui_payload_status(status: str, message: str) -> None:
+    try:
+        payload = {}
+        if os.path.exists(SYSTEM_STATUS_FILE):
+            with open(SYSTEM_STATUS_FILE, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+
+        payload["ui_payload"] = {
+            "status": status,
+            "last_updated": _utc_now(),
+            "message": message,
+        }
+
+        with open(SYSTEM_STATUS_FILE, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2)
+
+    except Exception as e:
+        print(f"[scheme_info] Failed to update system_status.json: {e}")
 
 
 # ---------------------------
@@ -419,13 +448,33 @@ def generate_ui_payload() -> Dict[str, Any]:
 
 
 def dump_ui_file() -> str:
-    payload = generate_ui_payload()
-    os.makedirs(os.path.dirname(OUTPUT_UI_PATH), exist_ok=True)
-    with open(OUTPUT_UI_PATH, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
-    print(f"[scheme_info] Wrote simplified UI payload to {OUTPUT_UI_PATH}")
-    return OUTPUT_UI_PATH
+    try:
+        _update_ui_payload_status(
+            "running",
+            "UI payload generation in progress"
+        )
+        payload = generate_ui_payload()
+        os.makedirs(os.path.dirname(OUTPUT_UI_PATH), exist_ok=True)
+        with open(OUTPUT_UI_PATH, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
 
+        print(f"[scheme_info] Wrote simplified UI payload to {OUTPUT_UI_PATH}")
+
+        # >>> STATUS UPDATE (SUCCESS)
+        _update_ui_payload_status(
+            "live",
+            "UI metrics payload generated successfully"
+        )
+
+        return OUTPUT_UI_PATH
+
+    except Exception as e:
+        # >>> STATUS UPDATE (FAILURE)
+        _update_ui_payload_status(
+            "failed",
+            f"UI payload generation failed: {str(e)}"
+        )
+        raise
 
 if __name__ == "__main__":
     dump_ui_file()

@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-scripts/build_all_scheme_metrics.py
+app/build_all_scheme_metrics.py
 
 Compute metrics for every scheme code present in data/parent_masterlist.json
-(or any scheme list you provide). Saves per-code metrics to data/metrics_by_code.json.
+and save per-code metrics to data/metrics_by_code.json.
 
-Usage:
-  python scripts/build_all_scheme_metrics.py --workers 8 --rf 0.04 --limit 0
+Also updates per-module system status for metrics.
 """
+
 import os
 import json
 import argparse
 from typing import List, Set
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
 
 # Adjust import path if needed; this expects app.metrics.compute_metrics_batch to exist
 try:
@@ -22,11 +22,50 @@ except Exception:
     # fallback: try importing metrics directly
     from metrics import compute_metrics_batch  # type: ignore
 
+
+# ==========================================================
+# Paths
+# ==========================================================
 BASE_DIR = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_DIR = os.path.join(BASE_DIR, "data")
+
 PARENT_MASTERLIST_PATH = os.path.join(DATA_DIR, "parent_masterlist.json")
 OUT_PATH = os.path.join(DATA_DIR, "metrics_by_code.json")
+SYSTEM_STATUS_FILE = os.path.join(DATA_DIR, "system_status.json")
 
+
+# ==========================================================
+# Helpers
+# ==========================================================
+def utc_now():
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def update_metrics_status(status: str, message: str):
+    """
+    status: live | cached | failed
+    """
+    payload = {}
+    if os.path.exists(SYSTEM_STATUS_FILE):
+        try:
+            with open(SYSTEM_STATUS_FILE, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+        except Exception:
+            payload = {}
+
+    payload["metrics"] = {
+        "status": status,
+        "last_updated": utc_now(),
+        "message": message,
+    }
+
+    with open(SYSTEM_STATUS_FILE, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+
+
+# ==========================================================
+# ORIGINAL, WORKING SCHEME COLLECTION LOGIC (UNCHANGED)
+# ==========================================================
 def collect_all_scheme_codes(parent_master_path: str) -> List[str]:
     try:
         with open(parent_master_path, "r", encoding="utf-8") as f:
@@ -61,7 +100,12 @@ def collect_all_scheme_codes(parent_master_path: str) -> List[str]:
 
         for e in entries:
             if isinstance(e, dict):
-                code = str(e.get("scheme_code") or e.get("code") or e.get("schemeCode") or "").strip()
+                code = str(
+                    e.get("scheme_code")
+                    or e.get("code")
+                    or e.get("schemeCode")
+                    or ""
+                ).strip()
                 if code:
                     codes.add(code)
             elif isinstance(e, (list, tuple)) and len(e) >= 1:
@@ -71,14 +115,22 @@ def collect_all_scheme_codes(parent_master_path: str) -> List[str]:
 
         # also add rep_code if present in parent metadata
         if isinstance(val, dict):
-            rep = val.get("rep") or val.get("rep_code") or (val.get("rep_info") or {}).get("rep_code")
+            rep = (
+                val.get("rep")
+                or val.get("rep_code")
+                or (val.get("rep_info") or {}).get("rep_code")
+            )
             if rep:
                 codes.add(str(rep).strip())
 
-    # Remove empty
+    # Remove empty / non-numeric
     codes = {c for c in codes if c and c.isdigit()}
     return sorted(list(codes))
 
+
+# ==========================================================
+# Main
+# ==========================================================
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--parent-master", default=PARENT_MASTERLIST_PATH)
@@ -92,16 +144,51 @@ def main():
     if args.limit and args.limit > 0:
         codes = codes[: args.limit]
 
-    print(f"[build_all_scheme_metrics] Will compute metrics for {len(codes)} codes (workers={args.workers})")
-    # compute_metrics_batch should return dict: code -> metrics_dict
-    metrics_by_code = compute_metrics_batch(codes, max_workers=args.workers, risk_free_rate=args.rf)
+    print(
+        f"[build_all_scheme_metrics] Will compute metrics for "
+        f"{len(codes)} codes (workers={args.workers})"
+    )
 
-    # Save
-    os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    with open(args.out, "w", encoding="utf-8") as f:
-        json.dump(metrics_by_code or {}, f, indent=2, ensure_ascii=False)
+    try:
+        # compute_metrics_batch should return dict: code -> metrics_dict
+        metrics_by_code = compute_metrics_batch(
+            codes,
+            max_workers=args.workers,
+            risk_free_rate=args.rf,
+        )
 
-    print(f"[build_all_scheme_metrics] Saved metrics_by_code to {args.out}")
+        # Save
+        os.makedirs(os.path.dirname(args.out), exist_ok=True)
+        with open(args.out, "w", encoding="utf-8") as f:
+            json.dump(metrics_by_code or {}, f, indent=2, ensure_ascii=False)
+
+        update_metrics_status(
+            "live",
+            "Metrics rebuilt successfully"
+        )
+
+        print(f"[build_all_scheme_metrics] Saved metrics_by_code to {args.out}")
+
+    except Exception as e:
+        print("[build_all_scheme_metrics] FAILED:", str(e))
+
+        if os.path.exists(args.out):
+            update_metrics_status(
+                "cached",
+                "Metrics rebuild failed; serving last cached metrics"
+            )
+        else:
+            update_metrics_status(
+                "failed",
+                f"Metrics rebuild failed: {str(e)}"
+            )
+
+        raise
+
 
 if __name__ == "__main__":
+    update_metrics_status(
+    "running",
+    "Metrics computation started"
+    )
     main()

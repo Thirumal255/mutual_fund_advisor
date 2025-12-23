@@ -30,6 +30,7 @@ import time
 import importlib
 from typing import List, Dict, Any, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
 
 # -------------------------
 # Robust import of extract_paragraphs from doc_loader
@@ -69,11 +70,39 @@ BASE_DIR = os.path.dirname(__file__)
 DATA_DIR = os.path.join(BASE_DIR, "..", "data")
 SCHEME_DOCS_DIR = os.path.join(DATA_DIR, "scheme_docs")
 os.makedirs(SCHEME_DOCS_DIR, exist_ok=True)
+SYSTEM_STATUS_FILE = os.path.join(DATA_DIR, "system_status.json")
 
 
 def log(msg: str) -> None:
     print(f"[doc_extractor] {msg}")
 
+
+# -------------------------
+# Status helpers (ADDITION)
+# -------------------------
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _update_system_status(payload: Dict[str, Any]) -> None:
+    """
+    Merge SID extractor status into system_status.json
+    """
+    try:
+        if os.path.exists(SYSTEM_STATUS_FILE):
+            with open(SYSTEM_STATUS_FILE, "r", encoding="utf-8") as f:
+                status = json.load(f)
+        else:
+            status = {}
+
+        status["sid_extraction"] = payload
+
+        with open(SYSTEM_STATUS_FILE, "w", encoding="utf-8") as f:
+            json.dump(status, f, indent=2)
+
+    except Exception as e:
+        log(f"Failed to update system_status.json: {e}")
 
 # -------------------------
 # API key & client
@@ -474,6 +503,12 @@ def process_sid_index(
           else => skip
       - --force overrides and extracts regardless.
     """
+    _update_system_status({
+        "status": "running",
+        "last_updated": _utc_now(),
+        "message": "SID extraction in progress"
+    })
+
     if not os.path.exists(index_path):
         log(f"SID index not found: {index_path}")
         return {"processed": 0, "skipped": 0, "failed": 0}
@@ -560,7 +595,27 @@ def process_sid_index(
                 elapsed = time.time() - start
                 # minimal progress line
                 log(f"Progress: {processed}/{len(items)} processed, {skipped} skipped, {failed} failed. Elapsed: {int(elapsed)}s")
+    # -------------------------
+    # STATUS WRITE (ADDITION)
+    # -------------------------
+    if processed > 0 and failed == 0:
+        status = "live"
+        msg = "SID documents extracted successfully. Atlease There is change to one of the SIDs From last extraction"
+    elif processed == 0 and failed == 0:
+        status = "cached"
+        msg = "All SID documents served from cache,There is no change to any of the SID's From last extraction"
+    else:
+        status = "partial"
+        msg = "SID extraction partially completed with errors"
 
+    _update_system_status({
+        "status": status,
+        "last_updated": _utc_now(),
+        "processed": processed,
+        "skipped": skipped,
+        "failed": failed,
+        "message": msg
+    })
     total_elapsed = time.time() - start
     log(f"Done. Total entries: {total}. Processed: {processed}. Skipped: {skipped}. Failed: {failed}. Total time: {int(total_elapsed)}s")
     return {"processed": processed, "skipped": skipped, "failed": failed, "elapsed_s": int(total_elapsed)}
@@ -570,6 +625,7 @@ def process_sid_index(
 # CLI: process-all or single-file modes
 # -------------------------
 if __name__ == "__main__":
+  
     parser = argparse.ArgumentParser(description="SID extractor / batch processor")
     parser.add_argument("pdf_path", nargs="?", help="Path to a single SID PDF (optional)")
     parser.add_argument("scheme_code", nargs="?", help="Scheme code for single PDF (optional)")

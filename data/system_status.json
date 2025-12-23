@@ -1,0 +1,27 @@
+{
+  "masterlist_source": "live",
+  "timestamp": "2025-12-22T12:14:24.077828Z",
+  "masterlist": {
+    "status": "live",
+    "last_updated": "2025-12-23T03:29:54.847371Z",
+    "message": "Masterlist rebuilt from live AMFI data"
+  },
+  "metrics": {
+    "status": "live",
+    "last_updated": "2025-12-22T18:36:23.597428Z",
+    "message": "Metrics rebuilt successfully"
+  },
+  "sid_extraction": {
+    "status": "cached",
+    "last_updated": "2025-12-23T03:30:20.550622Z",
+    "processed": 0,
+    "skipped": 10,
+    "failed": 0,
+    "message": "All SID documents served from cache,There is no change to any of the SID's From last extraction"
+  },
+  "ui_payload": {
+    "status": "live",
+    "last_updated": "2025-12-23T00:52:26.000527Z",
+    "message": "UI metrics payload generated successfully"
+  }
+}
