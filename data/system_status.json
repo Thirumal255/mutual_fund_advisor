@@ -13,7 +13,7 @@
   },
   "sid_extraction": {
     "status": "cached",
-    "last_updated": "2025-12-23T03:30:20.550622Z",
+    "last_updated": "2026-01-05T07:21:15.302988Z",
     "processed": 0,
     "skipped": 10,
     "failed": 0,
@@ -21,7 +21,7 @@
   },
   "ui_payload": {
     "status": "live",
-    "last_updated": "2025-12-23T00:52:26.000527Z",
+    "last_updated": "2026-01-05T08:05:49.380039Z",
     "message": "UI metrics payload generated successfully"
   }
 }

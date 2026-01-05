@@ -14,6 +14,17 @@ from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from pydantic import BaseModel
 from jose import JWTError, jwt
 from app.system_status import load_status
+from app.auth import (
+    authenticate_user,
+    create_access_token,
+    get_current_user,
+    require_admin,
+    User,
+)
+
+from app.agent import chat
+
+
 
 
 # ==========================================================
@@ -36,6 +47,8 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/token")
 # ==========================================================
 
 app = FastAPI(title="Mutual Fund Advisor API")
+
+app.include_router(chat.router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -114,35 +127,7 @@ def create_access_token(data: dict, expires_seconds: int):
     token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
     return token, expire
 
-async def get_current_user(token: str = Depends(oauth2_scheme)) -> User:
-    auth_error = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Invalid authentication",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username = payload.get("sub")
-        role = payload.get("role")
-        if not username:
-            raise auth_error
-    except JWTError:
-        raise auth_error
 
-    u = USERS.get(username)
-    if not u:
-        raise auth_error
-
-    return User(
-        username=u["username"],
-        full_name=u.get("full_name"),
-        role=u["role"]
-    )
-
-async def require_admin(user: User = Depends(get_current_user)) -> User:
-    if user.role != "admin":
-        raise HTTPException(status_code=403, detail="Admin access required")
-    return user
 
 # ==========================================================
 # AUTH ENDPOINT
@@ -296,3 +281,20 @@ def sanitize_for_json(obj):
 def system_status(_: User = Depends(get_current_user)):
     return load_status()
 
+# ==========================================================
+# AUTH DEBUG (TEMPORARY – SAFE)
+# ==========================================================
+
+@app.get("/api/debug/auth")
+def debug_auth(user: User = Depends(get_current_user)):
+    """
+    Debug endpoint to verify:
+    - Token is being sent
+    - Token is decoded correctly
+    - Role is what backend sees
+    """
+    return {
+        "username": user.username,
+        "role": user.role,
+        "message": "Authentication OK"
+    }
