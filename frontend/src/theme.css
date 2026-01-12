@@ -1,0 +1,41 @@
+/* ===============================
+   Design Tokens – MF Advisor
+   =============================== */
+
+:root {
+  /* -------- COLORS -------- */
+  --primary: #2563eb;          /* Blue */
+  --primary-light: #dbeafe;
+
+  --success: #16a34a;          /* Green */
+  --warning: #f59e0b;          /* Amber */
+  --danger: #dc2626;           /* Red */
+
+  --text-main: #111827;        /* Almost black */
+  --text-muted: #6b7280;       /* Gray */
+
+  --bg-page: #f8fafc;          /* Light gray */
+  --bg-card: #ffffff;
+
+  --border: #e5e7eb;
+
+  /* -------- SPACING -------- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* -------- RADIUS -------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------- SHADOW -------- */
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.06);
+  --shadow-drawer: -8px 0 24px rgba(0, 0, 0, 0.1);
+
+  /* -------- TRANSITIONS -------- */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+}

@@ -1,15 +1,22 @@
 import { useEffect, useState, useRef } from "react";
+
 import Login from "./pages/Login";
 import Metrics from "./pages/Metrics";
 import Admin from "./pages/Admin";
+
+import Card from "./components/Card";
+import Button from "./components/Button";
+
+import ChatMessage from "./components/ChatMessage";
+import ChatInput from "./components/ChatInput";
 
 /* ===============================
    Status helpers
    =============================== */
 function statusStyle(status) {
-  if (status === "live") return { color: "#155724", fontWeight: 600 };
-  if (status === "cached") return { color: "#856404", fontWeight: 600 };
-  if (status === "running") return { color: "#0c5460", fontWeight: 600 };
+  if (status === "live") return { color: "#16a34a", fontWeight: 600 };
+  if (status === "cached") return { color: "#f59e0b", fontWeight: 600 };
+  if (status === "running") return { color: "#0284c7", fontWeight: 600 };
   return { color: "#444" };
 }
 
@@ -34,52 +41,69 @@ function SystemStatusTable({ status, role, token, onRefresh }) {
   ];
 
   return (
-    <div style={card}>
-      <div style={cardHeader}>
-        <h3 style={{ margin: 0 }}>📊 System Status</h3>
-
-        {role === "admin" && (
-          <Admin compact token={token} onStatusUpdate={onRefresh} />
-        )}
-      </div>
-
-      <table style={table}>
+    <Card
+      title={
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <span>📊 System Status</span>
+          {role === "admin" && (
+            <Admin compact token={token} onStatusUpdate={onRefresh} />
+          )}
+        </div>
+      }
+    >
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
-            <th style={th}>Module</th>
-            <th style={th}>Status</th>
-            <th style={th}>Last Updated</th>
-            <th style={th}>Message</th>
+            <th style={{ padding: 10, background: "#f1f5f9" }}>Module</th>
+            <th style={{ padding: 10, background: "#f1f5f9" }}>Status</th>
+            <th style={{ padding: 10, background: "#f1f5f9" }}>
+              Last Updated
+            </th>
+            <th style={{ padding: 10, background: "#f1f5f9" }}>Message</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((r) => (
             <tr key={r.name}>
-              <td style={td}><b>{r.name}</b></td>
-              <td style={{ ...td, ...statusStyle(r.data?.status) }}>
+              <td style={{ padding: 10 }}>
+                <b>{r.name}</b>
+              </td>
+              <td style={{ padding: 10, ...statusStyle(r.data?.status) }}>
                 {statusLabel(r.data?.status)}
               </td>
-              <td style={td}>
+              <td style={{ padding: 10 }}>
                 {r.data?.last_updated
                   ? new Date(r.data.last_updated).toLocaleString()
                   : "N/A"}
               </td>
-              <td style={td}>{r.data?.message || "—"}</td>
+              <td style={{ padding: 10 }}>
+                {r.data?.message || "—"}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </Card>
   );
 }
 
 /* ===============================
-   Chat Drawer
+   Chat Overlay
    =============================== */
-function ChatDrawer({ token, onClose }) {
+function ChatOverlay({ token, onClose }) {
+  const bottomRef = useRef(null);
+
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [profile, setProfile] = useState({});
 
   const sessionIdRef = useRef(
     `session_${Date.now()}_${Math.random().toString(36).slice(2)}`
@@ -91,16 +115,41 @@ function ChatDrawer({ token, onClose }) {
         role: "assistant",
         text:
           "👋 Hi! I’m your Mutual Fund Advisor.\n\nTell me your goal, time horizon, and risk comfort — I’ll take care of the rest.",
+        ts: Date.now(),
       },
     ]);
   }, []);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  function extractProfileFromText(text) {
+    const updated = {};
+
+    if (/sip/i.test(text)) updated.investmentType = "SIP";
+    if (/lump/i.test(text)) updated.investmentType = "Lumpsum";
+    if (/moderate/i.test(text)) updated.risk = "Moderate";
+    if (/aggressive/i.test(text)) updated.risk = "Aggressive";
+    if (/conservative/i.test(text)) updated.risk = "Conservative";
+    if (/retirement/i.test(text)) updated.goal = "Retirement";
+    if (/wealth/i.test(text)) updated.goal = "Wealth Creation";
+    if (/year/i.test(text)) updated.horizon = "5–7 years";
+
+    return updated;
+  }
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
 
     const userText = input;
     setInput("");
-    setMessages((m) => [...m, { role: "user", text: userText }]);
+
+    setMessages((m) => [
+      ...m,
+      { role: "user", text: userText, ts: Date.now() },
+    ]);
+
     setLoading(true);
 
     try {
@@ -117,14 +166,38 @@ function ChatDrawer({ token, onClose }) {
       });
 
       const data = await res.json();
+      console.log("CHAT RESPONSE:", data);
+
+      const aiText =
+        data?.message ||
+        data?.reply ||
+        data?.response ||
+        "⚠️ Try again.";
+
+
       setMessages((m) => [
-        ...m,
-        { role: "assistant", text: data?.message || "⚠️ Please try again." },
-      ]);
+  ...m,
+  { role: "assistant", text: aiText, ts: Date.now() },
+]);
+
+// ✅ Prefer backend profile if present, else fallback
+if (data?.profile && typeof data.profile === "object") {
+  setProfile(data.profile);
+} else {
+  setProfile((p) => ({
+    ...p,
+    ...extractProfileFromText(aiText),
+  }));
+}
+
     } catch {
       setMessages((m) => [
         ...m,
-        { role: "assistant", text: "⚠️ Chat service unavailable." },
+        {
+          role: "assistant",
+          text: "⚠️ Chat service unavailable.",
+          ts: Date.now(),
+        },
       ]);
     } finally {
       setLoading(false);
@@ -132,36 +205,124 @@ function ChatDrawer({ token, onClose }) {
   };
 
   return (
-    <div style={chatDrawer}>
-      <div style={chatHeader}>
-        <b>💬 Mutual Fund Advisor</b>
-        <button onClick={onClose} style={iconButton}>✖</button>
-      </div>
-
-      <div style={chatBody}>
-        {messages.map((m, i) => (
-          <div
-            key={i}
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(15, 23, 42, 0.25)",
+        zIndex: 999999,
+        display: "flex",
+        justifyContent: "flex-end",
+      }}
+    >
+      <div
+        style={{
+          width: 420,
+          height: "100vh",
+          background: "#ffffff",
+          display: "flex",
+          flexDirection: "column",
+          boxShadow: "-8px 0 24px rgba(0,0,0,0.25)",
+        }}
+      >
+        {/* Header */}
+        <div
+          style={{
+            padding: "14px 16px",
+            borderBottom: "1px solid #e5e7eb",
+            background: "#f8fafc",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <div style={{ fontWeight: 600 }}>💬 Mutual Fund Advisor</div>
+            <div style={{ fontSize: 12, color: "#64748b" }}>
+              AI-powered investment guidance
+            </div>
+          </div>
+          <button
+            onClick={onClose}
             style={{
-              ...bubble,
-              alignSelf: m.role === "user" ? "flex-end" : "flex-start",
-              background:
-                m.role === "user" ? "#d1e7ff" : "#f1f3f5",
+              border: "none",
+              background: "transparent",
+              fontSize: 18,
+              cursor: "pointer",
+              color: "#475569",
             }}
           >
-            <div style={{ whiteSpace: "pre-wrap" }}>{m.text}</div>
-          </div>
-        ))}
-        {loading && <div style={{ opacity: 0.6 }}>⏳ Thinking…</div>}
-      </div>
+            ✕
+          </button>
+        </div>
 
-      <div style={chatInput}>
-        <input
+        {/* Advisor Profile Summary */}
+        {Object.keys(profile).length > 0 && (
+          <div
+            style={{
+              margin: 12,
+              padding: 12,
+              background: "#eef2ff",
+              borderRadius: 10,
+              fontSize: 13,
+              border: "1px solid #c7d2fe",
+            }}
+          >
+            <div style={{ fontWeight: 600, marginBottom: 6 }}>
+              🧠 Advisor Understanding
+            </div>
+
+            {Object.entries(profile).map(([key, value]) => (
+  <div key={key}>
+    <b>{key.replace(/_/g, " ").toUpperCase()}:</b>{" "}
+    {String(value)}
+  </div>
+))}
+          </div>
+        )}
+
+        {/* Messages */}
+        <div
+          style={{
+            flex: 1,
+            padding: 16,
+            overflowY: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 10,
+            background: "#f9fafb",
+          }}
+        >
+          {messages.map((m, i) => (
+            <ChatMessage
+              key={i}
+              role={m.role}
+              text={m.text}
+              ts={m.ts}
+            />
+          ))}
+
+          {loading && (
+            <div
+              style={{
+                alignSelf: "flex-start",
+                fontSize: 13,
+                color: "#64748b",
+              }}
+            >
+              ⏳ Advisor is thinking…
+            </div>
+          )}
+
+          <div ref={bottomRef} />
+        </div>
+
+        {/* Input */}
+        <ChatInput
           value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-          placeholder="Ask about mutual funds…"
-          style={chatInputBox}
+          onChange={setInput}
+          onSend={sendMessage}
+          loading={loading}
         />
       </div>
     </div>
@@ -189,6 +350,11 @@ export default function App() {
     refreshSystemStatus();
   }, [token]);
 
+  useEffect(() => {
+    document.body.style.overflow = showChat ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [showChat]);
+
   if (!token) {
     return (
       <Login
@@ -203,159 +369,46 @@ export default function App() {
   }
 
   return (
-    <div style={page}>
-      <div style={topBar}>
-        <h2 style={{ margin: 0 }}>💼 Mutual Fund Advisor</h2>
-        <div>
-          <button style={primaryBtn} onClick={() => setShowChat(true)}>
-            💬 Chat
-          </button>
-          <button
-            style={secondaryBtn}
-            onClick={() => {
-              localStorage.clear();
-              location.reload();
-            }}
-          >
-            Logout
-          </button>
+    <>
+      <div style={{ padding: 24 }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 24,
+          }}
+        >
+          <h2>💼 Mutual Fund Advisor</h2>
+          <div>
+            <Button onClick={() => setShowChat(true)}>💬 Chat</Button>{" "}
+            <Button
+              variant="secondary"
+              onClick={() => {
+                localStorage.clear();
+                location.reload();
+              }}
+            >
+              Logout
+            </Button>
+          </div>
         </div>
+
+        <SystemStatusTable
+          status={systemStatus}
+          role={role}
+          token={token}
+          onRefresh={refreshSystemStatus}
+        />
+
+        <Card title="📈 Mutual Fund Metrics">
+          <Metrics token={token} />
+        </Card>
       </div>
 
-      <SystemStatusTable
-        status={systemStatus}
-        role={role}
-        token={token}
-        onRefresh={refreshSystemStatus}
-      />
-
-      <Metrics token={token} />
-
       {showChat && (
-        <ChatDrawer token={token} onClose={() => setShowChat(false)} />
+        <ChatOverlay token={token} onClose={() => setShowChat(false)} />
       )}
-    </div>
+    </>
   );
 }
-
-/* ===============================
-   Theme Styles
-   =============================== */
-const page = {
-  minHeight: "100vh",
-  padding: 24,
-  background: "linear-gradient(135deg, #f8f9fa, #eef2f7)",
-  fontFamily: "Inter, system-ui, sans-serif",
-};
-
-const topBar = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: 24,
-};
-
-const card = {
-  background: "#fff",
-  borderRadius: 12,
-  padding: 16,
-  marginBottom: 24,
-  boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
-};
-
-const cardHeader = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: 12,
-};
-
-const table = {
-  width: "100%",
-  borderCollapse: "collapse",
-};
-
-const th = {
-  textAlign: "left",
-  padding: 10,
-  background: "#f1f3f5",
-  borderBottom: "1px solid #ddd",
-};
-
-const td = {
-  padding: 10,
-  borderBottom: "1px solid #eee",
-};
-
-const primaryBtn = {
-  padding: "8px 14px",
-  marginRight: 8,
-  borderRadius: 8,
-  border: "none",
-  background: "#2563eb",
-  color: "#fff",
-  cursor: "pointer",
-};
-
-const secondaryBtn = {
-  padding: "8px 14px",
-  borderRadius: 8,
-  border: "1px solid #ccc",
-  background: "#fff",
-  cursor: "pointer",
-};
-
-/* Chat */
-const chatDrawer = {
-  position: "fixed",
-  top: 0,
-  right: 0,
-  width: 420,
-  height: "100vh",
-  background: "#fff",
-  display: "flex",
-  flexDirection: "column",
-  boxShadow: "-8px 0 24px rgba(0,0,0,0.1)",
-  zIndex: 1000,
-};
-
-const chatHeader = {
-  padding: 16,
-  borderBottom: "1px solid #eee",
-  display: "flex",
-  justifyContent: "space-between",
-};
-
-const chatBody = {
-  flex: 1,
-  padding: 16,
-  overflowY: "auto",
-  display: "flex",
-  flexDirection: "column",
-  gap: 8,
-};
-
-const bubble = {
-  maxWidth: "85%",
-  padding: 10,
-  borderRadius: 10,
-};
-
-const chatInput = {
-  padding: 12,
-  borderTop: "1px solid #eee",
-};
-
-const chatInputBox = {
-  width: "100%",
-  padding: 10,
-  borderRadius: 8,
-  border: "1px solid #ccc",
-};
-
-const iconButton = {
-  background: "transparent",
-  border: "none",
-  cursor: "pointer",
-  fontSize: 16,
-};

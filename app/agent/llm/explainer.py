@@ -7,6 +7,7 @@ from app.agent.llm.prompts import (
     PROFILE_CLARIFICATION_PROMPT,
     RECOMMENDATION_EXPLANATION_PROMPT,
     FOLLOWUP_QA_PROMPT,
+    SID_FOLLOWUP_QA_PROMPT,
     RESPONSE_STYLE_GUIDELINES,
     GREETING_PROMPT,   # 🆕 import
 )
@@ -26,7 +27,8 @@ def explain_chat_with_llm(
     profile: dict,
     schemes: Optional[List[dict]],
     conversation: List[dict],
-    intent: str
+    intent: str,
+    sid_evidence: Optional[list] = None
 ) -> str:
     llm = _get_llm()
 
@@ -50,12 +52,24 @@ def explain_chat_with_llm(
             schemes=schemes
         )
 
-    else:  # follow-up
-        prompt = FOLLOWUP_QA_PROMPT.format(
-            conversation=conversation,
-            user_question=user_question
-        )
+    else:  # FOLLOW-UP
+        if sid_evidence:
+            sid_text = "\n\n".join(
+                f"[Scheme {c['scheme_code']} | Page {c.get('page')}]\n{c['text']}"
+                for c in sid_evidence
+            )
 
+            prompt = SID_FOLLOWUP_QA_PROMPT.format(
+                conversation=conversation,
+                user_question=user_question,
+                schemes=schemes,
+                sid_evidence=sid_text
+            )
+        else:
+            prompt = FOLLOWUP_QA_PROMPT.format(
+                conversation=conversation,
+                user_question=user_question
+            )
     # -------------------------------
     # Final LLM call
     # -------------------------------

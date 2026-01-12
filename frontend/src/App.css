@@ -1,42 +1,174 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ===============================
+   Button Component
+   =============================== */
+
+.btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Primary */
+.btn-primary {
+  background: var(--primary);
+  color: white;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.btn-primary:hover {
+  filter: brightness(0.95);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Secondary */
+.btn-secondary {
+  background: var(--bg-card);
+  border-color: var(--border);
+  color: var(--text-main);
+}
+.btn-secondary:hover {
+  background: #f9fafb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Danger (future use) */
+.btn-danger {
+  background: var(--danger);
+  color: white;
 }
+
+/* Disabled */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+
+/* ===============================
+   Card Component
+   =============================== */
 
 .card {
-  padding: 2em;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
-.read-the-docs {
-  color: #888;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+}
+
+.card-body {
+  width: 100%;
+}
+
+
+
+/* ===============================
+   Status Badge
+   =============================== */
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-success {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.badge-warning {
+  background: #fef3c7;
+  color: var(--warning);
+}
+
+.badge-info {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.badge-default {
+  background: #f1f5f9;
+  color: var(--text-muted);
+}
+
+
+/* ===============================
+   Chat Drawer – HARD FIX
+   =============================== */
+
+.chat-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 420px;
+  max-width: 90vw;
+  height: 100vh;
+
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+
+  z-index: 9999; /* 🔥 FORCE TOP */
+}
+
+/* Header */
+.chat-header {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Body */
+.chat-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Messages */
+.chat-bubble {
+  max-width: 85%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #dbeafe;
+}
+
+.chat-bubble.assistant {
+  align-self: flex-start;
+  background: #f1f5f9;
+}
+
+/* Input */
+.chat-input {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
 }

@@ -13,15 +13,15 @@
   },
   "sid_extraction": {
     "status": "cached",
-    "last_updated": "2026-01-05T07:21:15.302988Z",
+    "last_updated": "2026-01-09T13:10:50.249291Z",
     "processed": 0,
-    "skipped": 10,
+    "skipped": 14,
     "failed": 0,
     "message": "All SID documents served from cache,There is no change to any of the SID's From last extraction"
   },
   "ui_payload": {
     "status": "live",
-    "last_updated": "2026-01-05T08:05:49.380039Z",
+    "last_updated": "2026-01-08T16:30:48.617912Z",
     "message": "UI metrics payload generated successfully"
   }
 }

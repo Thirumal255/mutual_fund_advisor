@@ -106,8 +106,7 @@ Rules:
 - Explain in simple, investor-friendly language.
 - Compare schemes when relevant.
 - Highlight exit load and plan options if asked.
-- If the user changes risk or time horizon, reply exactly with:
-  PROFILE_CHANGED
+- If the user changes any of the profile attributes (goal,time_horizon_years,risk,investment_type,investment_amount)  Reply with appropriate message that, your profile is changed, do you want to re generate the recomendations. 
 """
 
 
@@ -130,6 +129,35 @@ Instructions:
 - If the user changes risk, goal, or time horizon, respond with:
   PROFILE_CHANGED
 """
+
+# ---------------------------------------------------------
+# 7️⃣ SID-AWARE FOLLOW-UP PROMPT
+# ---------------------------------------------------------
+
+SID_FOLLOWUP_QA_PROMPT = """
+You are a SEBI-aligned mutual fund advisor.
+
+Conversation history:
+{conversation}
+
+User question:
+"{user_question}"
+
+Recommended Schemes (JSON):
+{schemes}
+
+Relevant SID Excerpts:
+{sid_evidence}
+
+Rules:
+- Answer ONLY using the recommended schemes.
+- Use SID excerpts wherever applicable.
+- Do NOT introduce new schemes.
+- Do NOT re-rank or suggest alternatives.
+- If SID does not mention the information, clearly say so.
+- If the user changes risk, goal, or horizon, respond with PROFILE_CHANGED.
+"""
+
 
 
 # ---------------------------------------------------------
